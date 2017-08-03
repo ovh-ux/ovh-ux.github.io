@@ -1,0 +1,25 @@
+locale: "en-US"
+
+name: OVH-UX
+
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+plugins_dir:
+    - jekyll-sitemap
+
+exclude:
+- bin
+- Gemfile
+- Gemfile.lock
+- Rakefile
+- scripts
+- README.md
+- vendor
+
+lang: en
