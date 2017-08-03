@@ -1,0 +1,34 @@
+{
+  "name": "ovh-ux.github.io",
+  "version": "0.0.1",
+  "description": "ovh-ux github pages",
+  "main": "index.js",
+  "dependencies": {
+    "cz-ovh-commit": "^1.0.0"
+  },
+  "devDependencies": {
+    "cz-ovh-commit": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovh-ux/ovh-ux.github.io.git"
+  },
+  "keywords": [
+    "ovh-ux",
+    "ovh"
+  ],
+  "author": "OVH-UX",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ovh-ux/ovh-ux.github.io/issues"
+  },
+  "homepage": "https://github.com/ovh-ux/ovh-ux.github.io#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-ovh-commit"
+    }
+  }
+}
