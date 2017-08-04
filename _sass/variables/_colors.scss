@@ -1,0 +1,48 @@
+/* blues */
+$brandColor: #113f6d;
+$blueZodiac: #122844;
+$blueZodiacLowAlpha: rgba($blueZodiac, 0.15);
+$fiord: #3f5167;
+$mischka: #d5dae0;
+$turquoiseBlue: #59d2ef;
+$foam: #e0f6fd;
+$turquoiseBlueLowAlpha: rgba($turquoiseBlue, 0.15);
+$pacificBlue: #007e9b;
+
+/* greys */
+$concrete: #f2f2f2;
+$grayNurse: #e9ebe7;
+$silverSand: #bbbdbf;
+
+/* univers colors */
+$universColors: (
+    web: #27b9a2,
+    telecom: #32acff,
+    cloud: #ffcc00,
+    mobileHost: #ee4036,
+    sunrise: #ff9803
+);
+
+/* states colors */
+$auroraBorealisDark: #158253;
+$auroraBorealisLight: #96f494;
+$sulfurDark: #a76900;
+$sulfurLight: #f2d857;
+$lavaDark: #a82724;
+$lavaLight: #f99d58;
+
+/* attribution */
+$textColor: $blueZodiac;
+$secondaryTextColor: $fiord;
+$reverseTextColor: white;
+$linkColor: $pacificBlue;
+
+$brandPrimary: $turquoiseBlue;
+$brandSuccess: $auroraBorealisDark;
+$brandWarning: $sulfurDark;
+$brandDanger: $lavaDark;
+
+$lightBackground: $grayNurse;
+$lighterBackground: $concrete;
+$lightestBackground: white;
+$darkBackground: $blueZodiac;

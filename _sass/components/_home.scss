@@ -1,0 +1,253 @@
+.home {
+    &-ovh-logo {
+        width: 100px;
+        height: auto;
+
+        &-container {
+            text-align: center;
+        }
+    }
+
+    &-title {
+        margin: $space-l3 0 $space-base 0;
+        text-align: center;
+    }
+
+    &-ux-logo {
+        width: 35%;
+        max-width: 140px;
+        height: auto;
+    }
+
+    &-intro {
+        padding: 0 10%;
+        text-align: center;
+    }
+
+    &-nav {
+        &__item {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+
+            &--about-us {
+                max-width: 25%;
+                left: $space-base;
+                top: 70%;
+            }
+
+            &--works {
+                max-width: 25%;
+                right: $space-base;
+                top: 70%;
+                text-align: right;
+            }
+
+            &--contribute {
+                left: 50%;
+                bottom: $space-base + $space-l2;
+                transform: translateX(-50%);
+            }
+        }
+
+        &__link {
+            @extend .plain-text;
+
+            display: inline-block;
+            padding: 0;
+            border: none;
+            position: relative;
+            background-color: transparent;
+            text-align: left;
+            text-decoration: none;
+
+            &--about-us {
+                color: $blueZodiac;
+            }
+
+            &--works {
+                color: $pacificBlue;
+            }
+
+            &--contribute {
+                color: $secondaryTextColor;
+            }
+        }
+
+        &__arrow {
+            width: 24px;
+            height: 17px;
+
+            &-container {
+                display: block;
+                width: 100%;
+
+                &--about-us {
+                    margin-bottom: $space-s2;
+                }
+
+                &--works {
+                    margin-bottom: $space-s2;
+                    text-align: right;
+                }
+
+                &--contribute {
+                    position: relative;
+                    top: $space-base + $space-l2 + $space-s2;
+                    text-align: center;
+                }
+            }
+
+            &--about-us {
+                transform: rotate(180deg);
+            }
+
+            &--contribute {
+                transform: rotate(90deg);
+            }
+
+            &-stroke {
+                fill: none;
+                stroke-linecap:round;
+                stroke-linejoin:round;
+
+                &--fadeout {
+                    stroke-opacity: .4;
+                }
+
+                &--about-us {
+                    stroke: $blueZodiac;
+                }
+
+                &--works {
+                    stroke: $pacificBlue;
+                }
+
+                &--contribute {
+                    stroke: $secondaryTextColor;
+                }
+            }
+
+            &-fill {
+                stroke: none;
+                opacity: .4;
+            }
+        }
+    }
+
+    @media screen and (orientation: landscape) and (min-width: $s-screen) {
+        &-title {
+            margin: $space-base 0 0 0;
+        }
+
+        &-ux-logo {
+            width: 16%;
+        }
+
+        &-intro {
+            margin: 0;
+            padding: 0 22%;
+        }
+
+        &-nav__item {
+            &--about-us {
+                max-width: 20%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &--works {
+                max-width: 20%;
+                right: $space-base;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    @media screen and (orientation: landscape) and (min-width: $m-screen) {
+        &-ovh-logo {
+            width: 120px;
+        }
+
+        &-title {
+            margin: $space-l2 0 $space-l1 0;
+        }
+
+        &-ux-logo {
+            width: 20%;
+            max-width: none;
+        }
+    }
+
+    @media screen and (orientation: landscape) and (min-width: $l-screen) {
+        box-sizing: border-box;
+        padding: $space-l2;
+
+        &-nav {
+            &__arrow {
+                width: 36px;
+                height: auto;
+
+                /*&-container {
+                    display: block;
+                    width: 100%;
+
+                    &--about-us,
+                    &--works {
+                        display: inline-block;
+                        width: auto;
+                    }
+
+                    &--about-us {
+                        margin-bottom: 0;
+                        margin-right: $space-s2;
+                    }
+
+                    &--works {
+                        margin-bottom: 0;
+                        margin-left: $space-s2;
+                        float: right;
+                    }
+                }
+
+                &--about-us,
+                &--works {
+                    vertical-align: bottom;
+                }*/
+            }
+
+            &__item {
+                &--about-us {
+                    left: $space-l2;
+                }
+
+                &--works {
+                    right: $space-l2;
+                }
+
+                &--contribute {
+                    bottom: $space-l2 + $space-l2;
+                }
+            }
+
+            &__arrow {
+                &-container {
+                    &--contribute {
+                        top: $space-base + $space-l2 + $space-base;
+                    }
+                }
+            }
+
+            &__link {
+                font-weight: 600;
+
+                &--about-us,
+                &--works {
+                    padding: $space-s2 0;
+                }
+            }
+        }
+    }
+}

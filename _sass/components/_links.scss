@@ -1,0 +1,29 @@
+.link {
+    border-bottom: solid 1px $linkColor;
+    font-family: $ff;
+    font-size: $fs-base;
+    font-weight: $fw-large;
+    line-height: $lh-base;
+    color: $linkColor;
+    text-decoration: none;
+    transition: all .12s ease-in;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-bottom: solid 3px darken($linkColor, 8%);
+        color: darken($linkColor, 8%);
+    }
+
+    &--reverse {
+        color: $turquoiseBlue;
+        border-bottom: solid 1px $turquoiseBlue;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border-bottom: solid 3px lighten($turquoiseBlue, 8%);
+            color: lighten($turquoiseBlue, 8%);
+        }
+    }
+}

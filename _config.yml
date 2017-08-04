@@ -13,6 +13,10 @@ sass:
 plugins_dir:
     - jekyll-sitemap
 
+include:
+- _pages
+- js
+
 exclude:
 - bin
 - Gemfile
