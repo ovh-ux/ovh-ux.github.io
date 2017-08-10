@@ -2,9 +2,16 @@
 # this ensures Jekyll reads the file to be transformed into CSS later
 # only Main files contain this front matter, not partials.
 ---
+@import "variables/_colors";
+@import "variables/_fonts";
 
- @import "typography";
+@import "mixins/_font-face";
+
+@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-bold-webfont", 700, normal);
+@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-regular-webfont", normal, normal);
+@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-semibold-webfont", 600, normal);
 
 body {
-    background-color: #ccc;
+    background-color: $lightestBackground;
+    font-family: 'SourceSansPro', "Source Sans Pro", sans-serif;
 }
