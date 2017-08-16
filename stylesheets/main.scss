@@ -6,6 +6,7 @@
 @import "variables/_fonts";
 
 @import "mixins/_font-face";
+@import "mixins/_font-styles";
 
 @include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-bold-webfont", 700, normal);
 @include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-regular-webfont", normal, normal);
@@ -16,7 +17,12 @@ body,
 html {
     margin: 0;
     padding: 0;
-    font-family: 'SourceSansPro', "Source Sans Pro", sans-serif;
+
+    @include font-styles($fs-mobile-ratio);
+
+    @media screen and (min-width: 800px) {
+        @include font-styles($fs-desktop-ratio);
+    }
 }
 
 
