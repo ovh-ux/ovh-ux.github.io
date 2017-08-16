@@ -1,0 +1,53 @@
+.footer-nav {
+    display: none;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 16px;
+    border-top: solid 1px $pacificBlue;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $lightestBackground;
+    justify-content: space-between;
+    align-items: center;
+
+    &--active {
+        display: flex;
+    }
+
+    &__ux-logo {
+        flex-grow: 0;
+        height: 42px;
+        width: auto;
+    }
+
+    &__link {
+        color: $pacificBlue;
+        text-decoration: none;
+    }
+
+    &__arrow {
+        display: inline-block;
+        width: 24px;
+        height: 17px;
+        vertical-align: middle;
+        margin-left: 8px;
+
+        &-stroke {
+            fill: none;
+            stroke: $pacificBlue;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+
+            &--fadeout {
+                stroke-opacity: .4;
+            }
+        }
+
+        &-fill {
+            stroke: none;
+            opacity: .4;
+        }
+    }
+
+}

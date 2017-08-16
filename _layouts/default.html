@@ -3,7 +3,6 @@
     {% include head.html %}
     <body>
         <div class="section-container">
-            {% include header.html %}
             <section id="home"
                      class="section section--home">
                 <div class="home-ovh-logo-container">
@@ -26,7 +25,9 @@
                                     <a class="home-nav__link home-nav__link--{{ page.section-name }}"
                                        href="#{{ page.section-name }}">
                                        <span class="home-nav__arrow-container home-nav__arrow-container--{{ page.section-name }}">
-                                           <svg class="home-nav__arrow home-nav__arrow--{{ page.section-name }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 17">
+                                           <svg class="home-nav__arrow home-nav__arrow--{{ page.section-name }}"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 17">
                                                <polyline points="15.5 0.5 23.5 8.5 15.5 16.5"
                                                    class="home-nav__arrow-stroke home-nav__arrow-stroke--fadeout home-nav__arrow-stroke--{{ page.section-name }}"/>
                                                <polyline points="14.5 6.5 16.5 8.5 14.5 10.5"
@@ -55,5 +56,6 @@
             </section>
             {{ content }}
         </div>
+        {% include footer.html %}
     </body>
 </html>
