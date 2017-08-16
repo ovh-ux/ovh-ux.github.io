@@ -2,9 +2,25 @@
 <html>
     {% include head.html %}
     <body>
-        <div class="container">
+        <div class="section-container">
             {% include header.html %}
-            <img src="{{ site.url }}/assets/images/uxTeamLogo.svg" alt="OVH UX Team logo">
+            <section class="section section--home">
+                <h1 class="home-title">
+                    <img src="assets/images/uxTeamLogo.svg"
+                         alt="OVH UX Team logo"
+                         class="home-logo">
+                </h1>
+                <nav class="home-nav">
+                    <ul>
+                        {% assign nav_pages = site.pages | sort : 'order' %}
+                        {% for page in nav_pages %}
+                            {% if page.showing %}
+                                <li>{{ page.title }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </section>
             {{ content }}
         </div>
     </body>

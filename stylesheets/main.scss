@@ -11,7 +11,14 @@
 @include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-regular-webfont", normal, normal);
 @include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-semibold-webfont", 600, normal);
 
-body {
-    background-color: $lightestBackground;
+
+body,
+html {
+    margin: 0;
+    padding: 0;
     font-family: 'SourceSansPro', "Source Sans Pro", sans-serif;
 }
+
+
+@import "components/_sections";
+@import "components/_home";
