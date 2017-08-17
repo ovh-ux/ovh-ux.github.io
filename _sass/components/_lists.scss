@@ -1,0 +1,43 @@
+.list {
+    &__item {
+        @extend .plain-text;
+
+        padding: 8px 0;
+    }
+
+    &-illustrated {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        &__item {
+            padding: 32px 0;
+            text-align: center;
+
+            &--border {
+                border-bottom: dashed 1px $mischka;
+            }
+        }
+
+        &__icon {
+            display: block;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 16px auto;
+        }
+
+        @media screen and (orientation: landscape) and (min-width: 480px) {
+            display: flex;
+
+            &__item {
+                flex-basis: calc(100%/3);
+                padding: 16px;
+
+                &--border {
+                    border-bottom: none;
+                    border-right: dashed 1px $mischka;
+                }
+            }
+        }
+    }
+}
