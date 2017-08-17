@@ -15,7 +15,7 @@
 
     &-ux-logo {
         width: 35%;
-        max-width: 240px;
+        max-width: 140px;
         height: auto;
     }
 
@@ -156,6 +156,46 @@
                 right: 16px;
                 top: 50%;
                 transform: translateY(-50%);
+            }
+        }
+    }
+
+    @media screen and (orientation: landscape) and (min-width: 1024px) {
+        &-nav {
+            &__arrow {
+                &-container {
+                    display: block;
+                    width: 100%;
+
+                    &--about-us,
+                    &--works {
+                        display: inline-block;
+                        width: auto;
+                    }
+
+                    &--about-us {
+                        margin-bottom: 0;
+                        margin-right: 8px;
+                    }
+
+                    &--works {
+                        margin-bottom: 0;
+                        margin-left: 8px;
+                        float: right;
+                    }
+                }
+
+                &--about-us,
+                &--works {
+                    vertical-align: bottom;
+                }
+            }
+
+            &__link {
+                &--about-us,
+                &--works {
+                    padding: 8px 0;
+                }
             }
         }
     }
