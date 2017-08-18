@@ -13,12 +13,12 @@
     }
 
     &__content {
-        padding: 40px 16px;
+        padding: $space-l3 $space-base;
 
         @media screen and (orientation: landscape) and (min-width: 1024px) {
             box-sizing: border-box;
             width: 88%;
-            padding: 80px 32px;
+            padding: $space-xl2 $space-l2;
             margin-left: 12%;
         }
     }

@@ -2,7 +2,7 @@
     &__item {
         @extend .plain-text;
 
-        padding: 8px 0;
+        padding: $space-s2 0;
     }
 
     &-illustrated {
@@ -11,7 +11,7 @@
         list-style-type: none;
 
         &__item {
-            padding: 32px 0;
+            padding: $space-l2 0;
             text-align: center;
 
             &--border {
@@ -23,15 +23,15 @@
             display: block;
             width: 120px;
             height: 120px;
-            margin: 0 auto 16px auto;
+            margin: 0 auto $space-base auto;
         }
 
-        @media screen and (orientation: landscape) and (min-width: 480px) {
+        @media screen and (orientation: landscape) and (min-width: $s-screen) {
             display: flex;
 
             &__item {
                 flex-basis: calc(100%/3);
-                padding: 16px;
+                padding: $space-base;
 
                 &--border {
                     border-bottom: none;

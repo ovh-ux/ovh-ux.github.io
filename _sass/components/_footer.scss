@@ -2,7 +2,7 @@
     display: none;
     box-sizing: border-box;
     width: 100%;
-    padding: 8px 16px;
+    padding: $space-s2 $space-base;
     border-top: solid 1px $pacificBlue;
     position: fixed;
     bottom: 0;
@@ -17,7 +17,7 @@
 
     &__ux-logo {
         flex-grow: 0;
-        height: 42px;
+        height: $touch-area - ($space-s2 * 2);
         width: auto;
     }
 
@@ -31,7 +31,7 @@
         width: 24px;
         height: 17px;
         vertical-align: middle;
-        margin-left: 8px;
+        margin-left: $space-s2;
 
         &-stroke {
             fill: none;

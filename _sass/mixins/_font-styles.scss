@@ -1,11 +1,9 @@
-@import "../variables/_fonts";
-
 @mixin font-styles($fs-ratio) {
     $fs-small: $fs-base / $fs-ratio;
     $fs-large: $fs-base * $fs-ratio;
-    $fs-h3: $fs-base * ($fs-ratio * $fs-ratio);
-    $fs-h2: $fs-base * ($fs-ratio * $fs-ratio * $fs-ratio);
-    $fs-h1: $fs-base * ($fs-ratio * $fs-ratio * $fs-ratio * $fs-ratio);
+    $fs-h3: $fs-large * $fs-ratio;
+    $fs-h2: $fs-h3 * $fs-ratio;
+    $fs-h1: $fs-h2 * $fs-ratio;
 
     font-family: $ff;
     font-size: $fs-base;

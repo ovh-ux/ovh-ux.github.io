@@ -9,7 +9,7 @@
     }
 
     &-title {
-        margin: 40px 0 16px 0;
+        margin: $space-l3 0 $space-base 0;
         text-align: center;
     }
 
@@ -33,20 +33,20 @@
 
             &--about-us {
                 max-width: 25%;
-                left: 16px;
+                left: $space-base;
                 top: 70%;
             }
 
             &--works {
                 max-width: 25%;
-                right: 16px;
+                right: $space-base;
                 top: 70%;
                 text-align: right;
             }
 
             &--contribute {
                 left: 50%;
-                bottom: 48px;
+                bottom: $space-base + $space-l2;
                 transform: translateX(-50%);
             }
         }
@@ -78,17 +78,17 @@
                 width: 100%;
 
                 &--about-us {
-                    margin-bottom: 8px;
+                    margin-bottom: $space-s2;
                 }
 
                 &--works {
-                    margin-bottom: 8px;
+                    margin-bottom: $space-s2;
                     text-align: right;
                 }
 
                 &--contribute {
                     position: relative;
-                    top: 56px;
+                    top: $space-base + $space-l2 + $space-s2;
                     text-align: center;
                 }
             }
@@ -130,9 +130,9 @@
         }
     }
 
-    @media screen and (orientation: landscape) and (min-width: 480px) {
+    @media screen and (orientation: landscape) and (min-width: $s-screen) {
         &-title {
-            margin: 16px 0 0 0;
+            margin: $space-base 0 0 0;
         }
 
         &-ux-logo {
@@ -153,14 +153,14 @@
 
             &--works {
                 max-width: 20%;
-                right: 16px;
+                right: $space-base;
                 top: 50%;
                 transform: translateY(-50%);
             }
         }
     }
 
-    @media screen and (orientation: landscape) and (min-width: 1024px) {
+    @media screen and (orientation: landscape) and (min-width: $l-screen) {
         &-nav {
             &__arrow {
                 &-container {
@@ -175,12 +175,12 @@
 
                     &--about-us {
                         margin-bottom: 0;
-                        margin-right: 8px;
+                        margin-right: $space-s2;
                     }
 
                     &--works {
                         margin-bottom: 0;
-                        margin-left: 8px;
+                        margin-left: $space-s2;
                         float: right;
                     }
                 }
@@ -194,7 +194,7 @@
             &__link {
                 &--about-us,
                 &--works {
-                    padding: 8px 0;
+                    padding: $space-s2 0;
                 }
             }
         }

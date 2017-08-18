@@ -1,0 +1,13 @@
+$space-base: 1rem;
+$space-ratio: 1.25;
+
+$space-s1: $space-base / $space-ratio; //about 12px
+$space-s2: $space-s1 / ($space-ratio * $space-ratio); //about 8px
+$space-s3: $space-s2 / ($space-ratio * $space-ratio); //about 5px
+
+$space-l1: $space-base * ($space-ratio * $space-ratio); //25px
+$space-l2: $space-l1 * $space-ratio; //about 31px
+$space-l3: $space-l2 * $space-ratio; //about 39px
+
+$space-xl1: $space-l3 * ($space-ratio * $space-ratio); //about 61px
+$space-xl2: $space-xl1 * $space-ratio; //about 76px

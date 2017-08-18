@@ -4,6 +4,8 @@
 ---
 @import "variables/_colors";
 @import "variables/_fonts";
+@import "variables/_spaces";
+@import "variables/sizes";
 
 @import "mixins/_font-face";
 @import "mixins/_font-styles";
@@ -20,7 +22,7 @@ html {
 
     @include font-styles($fs-mobile-ratio);
 
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: $m-screen) {
         @include font-styles($fs-desktop-ratio);
     }
 }
