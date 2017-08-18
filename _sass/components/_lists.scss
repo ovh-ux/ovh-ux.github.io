@@ -1,4 +1,8 @@
 .list {
+    &--links {
+        color: $linkColor;
+    }
+
     &__item {
         @extend .plain-text;
 

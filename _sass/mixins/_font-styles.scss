@@ -13,7 +13,8 @@
         &--lvl2,
         &--lvl3 {
             font-weight: $fw-base;
-            line-height: $lh-small
+            letter-spacing: $ls-small;
+            line-height: $lh-small;
         }
 
         &--main {
@@ -32,12 +33,14 @@
         &--lvl4 {
             font-size: $fs-large;
             font-weight: $fw-large;
+            line-height: $lh-small;
         }
     }
 
     .plain-text {
         font-family: $ff;
         font-size: $fs-base;
+        letter-spacing: $ls-base;
         line-height: $lh-base;
     }
 }
