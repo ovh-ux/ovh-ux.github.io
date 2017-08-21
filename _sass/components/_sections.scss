@@ -15,10 +15,10 @@
     &__content {
         padding: $space-l3 $space-base;
 
-        @media screen and (orientation: landscape) and (min-width: 1024px) {
+        @media screen and (orientation: landscape) and (min-width: $l-screen) {
             box-sizing: border-box;
             width: 88%;
-            padding: $space-xl2 $space-l2;
+            padding: $space-xl1 $space-l2;
             margin-left: 12%;
         }
     }
@@ -51,4 +51,8 @@
         top: 100%;
         left: 0;
     }
+}
+
+.sub-section {
+    margin: $space-l2 0;
 }

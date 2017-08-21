@@ -12,25 +12,30 @@
         &--main,
         &--lvl2,
         &--lvl3 {
+            margin-top: 0;
             font-weight: $fw-base;
             letter-spacing: $ls-small;
             line-height: $lh-small;
         }
 
         &--main {
-            margin-top: 0;
+            margin-bottom: $space-l2;
             font-size: $fs-h1;
         }
 
         &--lvl2 {
+            margin-bottom: $space-l1;
             font-size: $fs-h2;
         }
 
         &--lvl3 {
+            margin-bottom: $space-base;
             font-size: $fs-h3;
         }
 
         &--lvl4 {
+            margin-top: 0;
+            margin-bottom: $space-s2;
             font-size: $fs-large;
             font-weight: $fw-large;
             line-height: $lh-small;
