@@ -14,4 +14,16 @@
         border-bottom: solid 3px darken($linkColor, 8%);
         color: darken($linkColor, 8%);
     }
+
+    &--reverse {
+        color: $turquoiseBlue;
+        border-bottom: solid 1px $turquoiseBlue;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border-bottom: solid 3px lighten($turquoiseBlue, 8%);
+            color: lighten($turquoiseBlue, 8%);
+        }
+    }
 }

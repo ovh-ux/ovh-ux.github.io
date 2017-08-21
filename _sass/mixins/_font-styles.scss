@@ -43,4 +43,11 @@
         letter-spacing: $ls-base;
         line-height: $lh-base;
     }
+
+    .small-text {
+        font-family: $ff;
+        font-size: $fs-small;
+        letter-spacing: $ls-base;
+        line-height: $lh-base;
+    }
 }

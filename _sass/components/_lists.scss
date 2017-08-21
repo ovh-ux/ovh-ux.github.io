@@ -1,6 +1,10 @@
 .list {
     &--links {
         color: $linkColor;
+
+        &-reverse {
+            color: $turquoiseBlue;
+        }
     }
 
     &__item {
