@@ -7,7 +7,7 @@ title: OVH UX Team
 {% for page in sections_pages %}
     {% if page.showing %}
         <section id="{{ page.section-name }}" class="section section--{{ page.section-name }}">
-            <div class="section__content">
+            <div class="section__content section__content--{{ page.section-name }}">
                 <h1 class="title title--main">{{ page.title }}</h1>
                 {{ page.content }}
             </div>

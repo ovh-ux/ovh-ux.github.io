@@ -16,10 +16,21 @@
         padding: $space-l3 $space-base;
 
         @media screen and (orientation: landscape) and (min-width: $l-screen) {
-            box-sizing: border-box;
-            width: 88%;
-            padding: $space-xl1 $space-l2;
-            margin-left: 12%;
+            &--about-us,
+            &--works {
+                box-sizing: border-box;
+                width: 88%;
+                padding: $space-xl1 $space-l3;
+            }
+
+            &--works {
+                margin-left: 12%;
+            }
+
+            &--contribute {
+                padding: $space-l3;
+                margin-top: $space-xl1;
+            }
         }
     }
 
