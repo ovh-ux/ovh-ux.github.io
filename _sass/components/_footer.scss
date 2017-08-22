@@ -11,14 +11,14 @@
     justify-content: space-between;
     align-items: center;
 
-    &--active {
-        display: flex;
-    }
-
     &__ux-logo {
         flex-grow: 0;
         height: $touch-area - ($space-s2 * 2);
         width: auto;
+
+        &--works {
+            order: 1;
+        }
     }
 
     &__link {
@@ -48,6 +48,65 @@
             stroke: none;
             opacity: .4;
         }
+
+        &--works {
+            transform: rotate(180deg);
+        }
+
+        &--contribute {
+            transform: rotate(270deg);
+        }
     }
 
+    &--active {
+        display: flex;
+    }
+
+    @media screen and (orientation: landscape) and (min-width: $l-screen) {
+        border-top: none;
+        top: 0;
+        bottom: auto;
+
+        &--about-us,
+        &--works {
+            flex-direction: column;
+            justify-content: center;
+            width: 12%;
+            height: 100%;
+        }
+
+        &--about-us {
+            right: 0;
+            left: auto;
+            border-left: solid 1px $pacificBlue;
+        }
+
+        &--works {
+            border-right: solid 1px $pacificBlue;
+        }
+
+        &--contribute {
+            height: $space-xl1;
+            border-bottom: solid 1px $pacificBlue;
+        }
+
+        &__ux-logo {
+            &--about-us,
+            &--works {
+                display: block;
+                width: 80%;
+                max-width: 100px;
+                height: auto;
+                margin-bottom: $space-l1;
+            }
+
+            &--works {
+                order: 0;
+            }
+
+            &--contribute {
+                height: $space-xl1 - ($space-s2 * 2);
+            }
+        }
+    }
 }
