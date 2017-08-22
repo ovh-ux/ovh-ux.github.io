@@ -1,4 +1,8 @@
 .team {
+    &__location {
+        margin-bottom: $space-l1;
+    }
+
     &__map {
         width: 612px;
         height: 302px;
@@ -89,16 +93,5 @@
                 margin-bottom: $space-s1;
             }
         }
-    }
-
-    &__category {
-        @extend .small-text;
-        color: $mischka;
-    }
-
-    &__amount {
-        @extend .small-text;
-        font-weight: 700;
-        color: $reverseTextColor;
     }
 }
