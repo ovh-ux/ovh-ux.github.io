@@ -1,15 +1,62 @@
----
-layout: compress
----
-
 <!DOCTYPE html>
 <html>
     {% include head.html %}
     <body>
-        <div class="container">
-            {% include header.html %}
+        <div class="section-container">
+            <section id="home"
+                     class="section section--home">
+                <div class="home-ovh-logo-container">
+                    <img src="assets/images/ovhLogo.svg"
+                         alt="OVH logo"
+                         class="home-ovh-logo">
+                </div>
+                <h1 class="home-title">
+                    <img src="assets/images/uxTeamLogo.svg"
+                         alt="OVH UX Team logo"
+                         class="home-ux-logo">
+                </h1>
+                <p class="plain-text home-intro">Repellendus atque consequatur sint ea a. Reiciendis animi qui aliquam in corrupti enim.</p>
+                <nav class="home-nav">
+                    <ul>
+                        {% assign nav_pages = site.pages | sort : 'order' %}
+                        {% for page in nav_pages %}
+                            {% if page.showing %}
+                                <li class="home-nav__item home-nav__item--{{ page.section-name }}">
+                                    <button class="home-nav__link home-nav__link--{{ page.section-name }}"
+                                            id="btn-{{ page.section-name }}">
+                                       <span class="home-nav__arrow-container home-nav__arrow-container--{{ page.section-name }}">
+                                           <svg class="home-nav__arrow home-nav__arrow--{{ page.section-name }}"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 17">
+                                               <polyline points="15.5 0.5 23.5 8.5 15.5 16.5"
+                                                   class="home-nav__arrow-stroke home-nav__arrow-stroke--fadeout home-nav__arrow-stroke--{{ page.section-name }}"/>
+                                               <polyline points="14.5 6.5 16.5 8.5 14.5 10.5"
+                                                   class="home-nav__arrow-stroke home-nav__arrow-stroke--{{ page.section-name }}"/>
+                                               <circle cx="8.5"
+                                                       cy="8.5"
+                                                       r="0.5"
+                                                       class="home-nav__arrow-fill"/>
+                                               <circle cx="4.5"
+                                                       cy="8.5"
+                                                       r="0.5"
+                                                       class="home-nav__arrow-fill"/>
+                                               <circle cx="0.5"
+                                                       cy="8.5"
+                                                       r="0.5"
+                                                       class="home-nav__arrow-fill"/>
+                                           </svg>
+                                       </span>
+                                       <span>{{ page.title }}</span>
+                                   </button>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </section>
             {{ content }}
-            {% include footer.html %}
         </div>
+        {% include footer.html %}
+        <script src="js/scripts.js"></script>
     </body>
 </html>
