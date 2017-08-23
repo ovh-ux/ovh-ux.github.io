@@ -294,7 +294,41 @@
         }
     }
 
-    @media screen and (orientation: landscape) and (min-width: $m-screen) {
+    @media screen and (orientation: portrait) and (min-width: $s-screen) {
+        &-background {
+            width: 921px;
+            height: 921px;
+            margin-top: -460px;
+            margin-left: 50%;
+            transform: translate(-50%, 30%);
+        }
+
+        &-ovh-logo {
+            width: 140px;
+            margin: $space-l1 0;
+
+            &-container {
+                position: static;
+                height: auto;
+            }
+        }
+
+        &-title {
+            margin: $space-base 0 0 0;
+        }
+
+        &-ux-logo {
+            width: 30%;
+            max-width: 240px;
+        }
+
+        &-intro {
+            margin: 0;
+            padding-top: $space-l1;
+        }
+    }
+
+    @media screen and (min-width: $m-screen) {
         &-ovh-logo {
             width: 120px;
         }
@@ -315,7 +349,7 @@
         }
     }
 
-    @media screen and (orientation: landscape) and (min-width: $l-screen) {
+    @media screen and (min-width: $l-screen) {
         &-ovh-logo {
             width: 140px;
             margin: $space-l1 0;
