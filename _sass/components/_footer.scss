@@ -11,6 +11,7 @@
     justify-content: space-between;
     align-items: center;
     opacity: 0;
+    cursor: pointer;
     transition: opacity .3s ease-in .6s;
 
     &__ux-logo {
@@ -24,8 +25,17 @@
     }
 
     &__link {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        font-family: $ff;
+        font-size: $fs-base;
+        font-weight: $fw-large;
+        letter-spacing: $ls-base;
+        line-height: $lh-small;
         color: $pacificBlue;
         text-decoration: none;
+        cursor: pointer;
     }
 
     &__arrow {
