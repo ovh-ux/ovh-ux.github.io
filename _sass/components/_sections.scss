@@ -47,34 +47,36 @@
     }
 
     &--home {
-        background-color: $lightestBackground;
-        color: $textColor;
+        background-color: transparent;
+        position: relative;
         top: 0;
         left: 0;
+        overflow: hidden;
+        color: $textColor;
     }
 
     &--about-us {
         background-color:  $darkBackground;
-        color: $reverseTextColor;
         position: absolute;
         top: 0;
         left: -100%;
+        color: $reverseTextColor;
     }
 
     &--works {
         background-color: $foam;
-        color: $textColor;
         position: absolute;
         top: 0;
         left: 100%;
+        color: $textColor;
     }
 
     &--contribute {
         background-color: $lighterBackground;
-        color: $textColor;
         position: absolute;
         top: 100%;
         left: 0;
+        color: $textColor;
     }
 
     &--active {
