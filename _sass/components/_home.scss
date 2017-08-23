@@ -52,8 +52,14 @@
         }
 
         &__link {
+            @extend .plain-text;
+
             display: inline-block;
+            padding: 0;
+            border: none;
             position: relative;
+            background-color: transparent;
+            text-align: left;
             text-decoration: none;
 
             &--about-us {
@@ -160,10 +166,31 @@
         }
     }
 
+    @media screen and (orientation: landscape) and (min-width: $m-screen) {
+        &-ovh-logo {
+            width: 120px;
+        }
+
+        &-title {
+            margin: $space-l2 0 $space-l1 0;
+        }
+
+        &-ux-logo {
+            width: 20%;
+            max-width: none;
+        }
+    }
+
     @media screen and (orientation: landscape) and (min-width: $l-screen) {
+        box-sizing: border-box;
+        padding: $space-l2;
+
         &-nav {
             &__arrow {
-                &-container {
+                width: 36px;
+                height: auto;
+
+                /*&-container {
                     display: block;
                     width: 100%;
 
@@ -188,10 +215,34 @@
                 &--about-us,
                 &--works {
                     vertical-align: bottom;
+                }*/
+            }
+
+            &__item {
+                &--about-us {
+                    left: $space-l2;
+                }
+
+                &--works {
+                    right: $space-l2;
+                }
+
+                &--contribute {
+                    bottom: $space-l2 + $space-l2;
+                }
+            }
+
+            &__arrow {
+                &-container {
+                    &--contribute {
+                        top: $space-base + $space-l2 + $space-base;
+                    }
                 }
             }
 
             &__link {
+                font-weight: 600;
+
                 &--about-us,
                 &--works {
                     padding: $space-s2 0;

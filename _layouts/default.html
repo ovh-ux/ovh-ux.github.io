@@ -22,8 +22,8 @@
                         {% for page in nav_pages %}
                             {% if page.showing %}
                                 <li class="home-nav__item home-nav__item--{{ page.section-name }}">
-                                    <a class="home-nav__link home-nav__link--{{ page.section-name }}"
-                                       href="#{{ page.section-name }}">
+                                    <button class="home-nav__link home-nav__link--{{ page.section-name }}"
+                                            id="btn-{{ page.section-name }}">
                                        <span class="home-nav__arrow-container home-nav__arrow-container--{{ page.section-name }}">
                                            <svg class="home-nav__arrow home-nav__arrow--{{ page.section-name }}"
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@
                                            </svg>
                                        </span>
                                        <span>{{ page.title }}</span>
-                                   </a>
+                                   </button>
                                 </li>
                             {% endif %}
                         {% endfor %}
@@ -57,5 +57,6 @@
             {{ content }}
         </div>
         {% include footer.html %}
+        <script src="js/scripts.js"></script>
     </body>
 </html>
