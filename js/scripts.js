@@ -1,61 +1,35 @@
-var menu = document.getElementById('footer-nav');
-var menuArrow = document.getElementsByClassName('footer-nav__arrow');
-var menuLogo = document.getElementsByClassName('footer-nav__ux-logo');
-var navBtns = document.getElementsByClassName('home-nav__link');
-var sections = document.getElementsByClassName('section');
-var sectionsContent = document.getElementsByClassName('section__content');
+const menu = document.getElementById('footer-nav');
+const menuArrow = document.querySelector('.footer-nav__arrow');
+const menuLogo = document.querySelector('.footer-nav__ux-logo');
 
-var sectionTeam = document.getElementById('about-us');
-var sectionWorks = document.getElementById('works');
-var sectionContribute = document.getElementById('contribute');
+const sections = document.getElementsByClassName('section');
+const sectionsContent = document.getElementsByClassName('section__content');
+const sectionIds = ['about-us', 'works', 'contribute'];
 
-var btnTeam = document.getElementById('btn-about-us');
-var btnWorks = document.getElementById('btn-works');
-var btnContribute = document.getElementById('btn-contribute');
+menu.addEventListener('click', () => {
+    menu.classList.remove('footer-nav--active');
+    sectionIds.forEach((sectionId) => {
+        menu.classList.remove(`footer-nav--${sectionId}`);
+        menuArrow.classList.remove(`footer-nav__arrow--${sectionId}`);
+        menuLogo.classList.remove(`footer-nav__ux-logo--${sectionId}`);
+    });
 
-function backHome() {
-    menu.classList.remove('footer-nav--active', 'footer-nav--about-us', 'footer-nav--works', 'footer-nav--contribute');
-    menuArrow[0].classList.remove('footer-nav__arrow--about-us', 'footer-nav__arrow--works', 'footer-nav__arrow--contribute');
-    menuLogo[0].classList.remove('footer-nav__ux-logo--about-us', 'footer-nav__ux-logo--works', 'footer-nav__ux-logo--contribute');
-
-    for (i = 0; i < sections.length; i++) {
+    for (let i = 0; i < sections.length; i++) {
         sections[i].classList.remove('section--active');
     }
 
-    for (i = 0; i < sectionsContent.length; i++) {
+    for (let i = 0; i < sectionsContent.length; i++) {
         sectionsContent[i].classList.remove('section__content--active');
     }
-}
+});
 
-function teamAppear() {
-    sectionTeam.classList.add('section--active');
-    menu.classList.add('footer-nav--active', 'footer-nav--about-us');
-    menuArrow[0].classList.add('footer-nav__arrow--about-us');
-    menuLogo[0].classList.add('footer-nav__ux-logo--about-us');
-    var sectionContent = sectionTeam.getElementsByClassName('section__content');
-    sectionContent[0].classList.add('section__content--active');
-}
-
-function worksAppear() {
-    sectionWorks.classList.add('section--active');
-    menu.classList.add('footer-nav--active', 'footer-nav--works');
-    menuArrow[0].classList.add('footer-nav__arrow--works');
-    menuLogo[0].classList.add('footer-nav__ux-logo--works');
-    var sectionContent = sectionWorks.getElementsByClassName('section__content');
-    sectionContent[0].classList.add('section__content--active');
-}
-
-function contributeAppear() {
-    sectionContribute.classList.add('section--active');
-    menu.classList.add('footer-nav--active', 'footer-nav--contribute');
-    menuArrow[0].classList.add('footer-nav__arrow--contribute');
-    menuLogo[0].classList.add('footer-nav__ux-logo--contribute');
-    var sectionContent = sectionContribute.getElementsByClassName('section__content');
-    sectionContent[0].classList.add('section__content--active');
-}
-
-btnTeam.addEventListener('click', teamAppear);
-btnWorks.addEventListener('click', worksAppear);
-btnContribute.addEventListener('click', contributeAppear);
-
-menu.addEventListener('click', backHome);
+sectionIds.forEach((sectionId) =>
+    document.getElementById(`btn-${sectionId}`).addEventListener('click', () => {
+        const section = document.getElementById(sectionId);
+        const sectionContent = document.querySelector(`#${sectionId} .section__content`);
+        menu.classList.add('footer-nav--active', `footer-nav--${sectionId}`);
+        menuArrow.classList.add(`footer-nav__arrow--${sectionId}`);
+        menuLogo.classList.add(`footer-nav__ux-logo--${sectionId}`);
+        section.classList.add('section--active');
+        sectionContent.classList.add('section__content--active');
+}));
