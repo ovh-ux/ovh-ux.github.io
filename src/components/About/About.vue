@@ -26,7 +26,7 @@
             Latest updated repository :
           </div>
           <div class="value">
-            <a href="#" class="text text--link">github-repository</a>
+            <a href="#" class="link">github-repository</a>
             <span>, 00 minutes ago</span>
           </div>
         </div>
