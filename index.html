@@ -1,16 +1,12 @@
----
-layout: default
-title: OVH UX Team
----
-
-{% assign sections_pages = site.pages | sort : 'order' %}
-{% for page in sections_pages %}
-    {% if page.showing %}
-        <section id="{{ page.section-name }}" class="section section--{{ page.section-name }}">
-            <div class="section__content section__content--{{ page.section-name }}">
-                <h1 class="title title--main">{{ page.title }}</h1>
-                {{ page.content }}
-            </div>
-        </section>
-    {% endif %}
-{% endfor %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ovh-ux-github-page</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
