@@ -1,25 +1,25 @@
 <template>
   <main>
-    <home></home>
-    <about></about>
-    <works></works>
-    <contact></contact>
+    <home-section></home-section>
+    <about-section></about-section>
+    <works-section></works-section>
+    <contact-section></contact-section>
   </main>
 </template>
 
 <script>
-import Home from '@/components/Home/Home'
-import About from '@/components/About/About'
-import Works from '@/components/Works/Works'
-import Contact from '@/components/Contact/Contact'
+import HomeSection from '@/components/HomeSection/HomeSection'
+import AboutSection from '@/components/AboutSection/AboutSection'
+import WorksSection from '@/components/WorksSection/WorksSection'
+import ContactSection from '@/components/ContactSection/ContactSection'
 
 export default {
   name: 'Main',
   components: {
-    Home,
-    About,
-    Works,
-    Contact
+    HomeSection,
+    AboutSection,
+    WorksSection,
+    ContactSection
   }
 }
 </script>

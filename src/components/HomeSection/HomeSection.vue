@@ -14,7 +14,7 @@
     <h2 class="home__intro-title">We are the UX Team of OVH</h2>
     <div class="home__intro-text">
       <p>OVH is a fast growing company specialized in web services. We build the interfaces for the OVH customers.</p>
-      <p>As web development enthusiasts, we love new technologies and challenges. In a technical context where things change quickly, we aim at creating innovative and effective interactions, while considering the technical legacy. </p>
+      <p>As web development enthusiasts, we love new technologies and challenges. In a technical context where things change quickly, we aim at creating innovative and effective interactions, while considering the technical legacy.</p>
     </div>
   </section>
 </section>
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'HomeSection'
 }
 </script>
 
