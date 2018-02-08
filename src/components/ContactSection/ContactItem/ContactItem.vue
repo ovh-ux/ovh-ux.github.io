@@ -1,19 +1,21 @@
 <template>
 <li class="contact-item">
   <div class="icon-container">
-    <img src="@/assets/images/icons/speechBubble_32px.svg" alt="">
+    <img src="contactMean.icon" alt="">
   </div>
-  <div class="contact-item__title">Contact us</div>
-  <div class="contact-item__description">
-    Whether you have questions, suggestions or requests, feel free to discuss with us on
-    <a href="#" class="link link--emphasis">Gitter</a>.
-  </div>
+  <div class="contact-item__title">{{contactMean.name}}</div>
+  <div class="contact-item__description" v-html="contactMean.description"></div>
 </li>
 </template>
 
 <script>
 export default {
-  name: 'ContactSection'
+  name: 'ContactSection',
+  props: {
+    contactMean: {
+      type: Object
+    }
+  }
 }
 </script>
 

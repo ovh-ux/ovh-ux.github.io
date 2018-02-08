@@ -1,17 +1,31 @@
 <template>
 <nav class="main-nav">
   <ul>
-    <li>Home</li>
-    <li>About</li>
-    <li>Works</li>
-    <li>Contact</li>
+    <main-nav-item v-for="mainNavItem in mainNavItems"
+      :key="mainNavItem.id"
+      :mainNavItem="mainNavItem"></main-nav-item>
   </ul>
 </nav>
 </template>
 
 <script>
+import MainNavItem from '@/components/MainNav/MainNavItem/MainNavItem';
+
 export default {
-  name: 'MainNav'
+  name: 'MainNav',
+  components: {
+    MainNavItem
+  },
+  data() {
+    return {
+      mainNavItems : [
+        'Home',
+        'About',
+        'Works',
+        'Contact'
+      ]
+    }
+  }
 }
 </script>
 

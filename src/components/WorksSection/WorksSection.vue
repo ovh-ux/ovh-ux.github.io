@@ -1,7 +1,9 @@
 <template>
 <section class="main__section works">
   <ul class="works__list">
-    <works-item></works-item>
+    <works-item v-for="work in works"
+      :key="work.id"
+      :work="work"></works-item>
   </ul>
   <button type="button">
     <img src="@/assets/images/icons/leftArrow_20px.svg" alt="Show previous work">
@@ -19,6 +21,38 @@ export default {
   name: 'WorksSection',
   components: {
     WorksItem
+  },
+  data() {
+    return {
+      works: [
+        {
+          name: 'Telecom Control Panel',
+          type: 'interface',
+          description: 'OVH Control Panel Telecom UI - Official Repository',
+          stats: [
+            {
+              property: 'Commits',
+              icon: '@/assets/images/icons/pen_20px.svg',
+              value: 0
+            },
+            {
+              property: 'Contributors',
+              icon: '@/assets/images/icons/person_20px.svg',
+              value: 0
+            },
+            {
+              property: 'since last update',
+              icon: '@/assets/images/icons/clock_20px.svg',
+              value: '0 mn'
+            }
+          ],
+          tags: [
+            'tag01',
+            'tag02'
+          ]
+        }
+      ]
+    }
   }
 }
 </script>

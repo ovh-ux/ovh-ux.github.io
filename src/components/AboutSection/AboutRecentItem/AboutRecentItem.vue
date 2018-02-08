@@ -1,14 +1,16 @@
 <template>
 <li class="recent-item">
   <div class="icon-container">
-    <img src="@/assets/images/icons/puzzle_32px.svg" alt="">
+    <img :src="item.icon" alt="">
   </div>
-  <div class="recent-item__description">
-    <div class="value value--l2">
-      00
-    </div>
-    <div class="property">
-      repositories on github
+  <div v-if="item.type === 'number'" class="recent-item__description">
+    <div class="value value--l2">{{item.value}}</div>
+    <div class="property">{{item.property}}</div>
+  </div>
+  <div v-if="item.type === 'link'" class="recent-item__description">
+    <div class="property">{{item.property}}</div>
+    <div class="value value--base">
+      <a href="item.linkHref">{{item.linkName}}</a>, {{item.linkInformations}}
     </div>
   </div>
 </li>
@@ -16,7 +18,12 @@
 
 <script>
 export default {
-  name: 'AboutRecentItem'
+  name: 'AboutRecentItem',
+  props: {
+    item: {
+      type: Object
+    }
+  }
 }
 </script>
 
