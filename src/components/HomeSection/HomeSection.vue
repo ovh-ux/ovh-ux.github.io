@@ -2,12 +2,10 @@
 <section class="main__section home">
   <header class="home__header">
     <h1 class="home__ux-logo">
-      <img src="@/assets/images/logos/logo_UXTeam.svg"
-      alt="UX Team logo">
+      <img src="@/assets/images/logos/logo_ux-team.svg" alt="OVH UX Team logo">
     </h1>
     <div class="home__ovh-logo">
-      <img src="@/assets/images/logos/logo_ovh-com.svg"
-      alt="OVH logo">
+      <img src="@/assets/images/logos/logo_ovh-com.svg" alt="OVH logo">
     </div>
   </header>
   <section class="home__intro">

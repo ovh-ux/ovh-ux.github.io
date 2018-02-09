@@ -1,9 +1,7 @@
 <template>
 <li class="technology-item">
   <div class="technologies-logo-container">
-    <img src="technology.logo"
-        class="technologies-logo"
-        :alt="technology.name + ' logo'">
+    <img :src="'./assets/images/logos/' + technology.logo + '.svg'" alt="">
   </div>
   <div class="technologies-amount">
     <div class="technologies-gradient"></div>

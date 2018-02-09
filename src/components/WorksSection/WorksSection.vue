@@ -32,17 +32,17 @@ export default {
           stats: [
             {
               property: 'Commits',
-              icon: '@/assets/images/icons/pen_20px.svg',
+              icon: 'pen',
               value: 0
             },
             {
               property: 'Contributors',
-              icon: '@/assets/images/icons/person_20px.svg',
+              icon: 'person',
               value: 0
             },
             {
               property: 'since last update',
-              icon: '@/assets/images/icons/clock_20px.svg',
+              icon: 'clock',
               value: '0 mn'
             }
           ],

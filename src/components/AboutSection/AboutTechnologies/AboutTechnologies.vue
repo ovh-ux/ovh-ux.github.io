@@ -22,12 +22,12 @@ export default {
       technologies : [
         {
           name: 'Node.js',
-          logo: '@/assets/images/logos/logo_node-js.svg',
+          logo: 'node-js',
           projectsAmount: 0
         },
         {
           name: 'HTML5',
-          logo: '@/assets/images/logos/logo_html5.svg',
+          logo: 'html5',
           projectsAmount: 0
         }
       ]

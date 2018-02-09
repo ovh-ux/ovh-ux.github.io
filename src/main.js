@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 
+const __svg__ = { path: './assets/**/icons/*.svg', name: '[hash].icons.svg' };
+require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

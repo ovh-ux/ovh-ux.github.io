@@ -21,13 +21,13 @@ export default {
     return {
       recentItems: [
         {
-          icon : '@/assets/images/icons/puzzle_32px.svg',
+          icon : 'puzzle',
           property : 'repositories on github',
           value : 0,
           type :'number'
         },
         {
-          icon : '@/assets/images/icons/clock_32px.svg',
+          icon : 'clock',
           property : 'latest updated repository',
           linkName : 'repository-name',
           linkHref : '#',

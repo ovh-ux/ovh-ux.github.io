@@ -1,7 +1,11 @@
 <template>
 <li class="recent-item">
   <div class="icon-container">
-    <img :src="item.icon" alt="">
+    <svg xmlns="http://www.w3.org/2000/svg"
+      class="icon"
+      aria-hidden="true">
+      <use :href="'#' + item.icon + '_32px'" />
+    </svg>
   </div>
   <div v-if="item.type === 'number'" class="recent-item__description">
     <div class="value value--l2">{{item.value}}</div>
