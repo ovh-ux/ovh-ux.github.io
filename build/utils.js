@@ -65,6 +65,7 @@ exports.cssLoaders = function (options) {
       options: {
         resources: [
           path.resolve(__dirname, '../src/styles/variables/_variables.scss'),
+          path.resolve(__dirname, '../src/styles/buttons.scss'),
           path.resolve(__dirname, '../src/styles/font-styles.scss')
         ]
       }

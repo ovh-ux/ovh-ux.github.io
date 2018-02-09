@@ -22,17 +22,17 @@ export default {
         {
           name: 'Discuss',
           icon: 'speechbubble',
-          description: 'Whether you have questions, suggestions or requests, feel free to discuss with us on <a href="https://gitter.im/ovh/ux">Gitter</a>.'
+          description: 'Whether you have questions, suggestions or requests, feel free to discuss with us on <a class="link link--accented" href="https://gitter.im/ovh/ux">Gitter</a>.'
         },
         {
           name: 'Contribute',
           icon: 'script',
-          description: 'Share with us your improvement ideas, tell us about a bug you\'ve found by creating <a href="https://github.com/ovh-ux/ovh-ux-guidelines/blob/master/.github/CONTRIBUTING.md#finding-wonderful-bugs">an issue</a>. Or contribute to our open source interfaces and components on <a href="https://github.com/ovh-ux">GitHub</a>.'
+          description: 'Share with us your improvement ideas, tell us about a bug you\'ve found by creating <a class="link link--accented" href="https://github.com/ovh-ux/ovh-ux-guidelines/blob/master/.github/CONTRIBUTING.md#finding-wonderful-bugs">an issue</a>. Or contribute to our open source interfaces and components on <a class="link link--accented" href="https://github.com/ovh-ux">GitHub</a>.'
         },
         {
           name: 'Join us',
           icon: 'hands',
-          description: 'We are always seeking for talented people. If you have the ambition, the passion and want to do something new, <a href="https://careers.ovh.com/fr/">please apply</a> : we will be very glad to meet you.'
+          description: 'We are always seeking for talented people. If you have the ambition, the passion and want to do something new, <a class="link link--accented" href="https://careers.ovh.com/fr/">please apply</a> : we will be very glad to meet you.'
         }
       ]
     }

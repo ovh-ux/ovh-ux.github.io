@@ -14,7 +14,7 @@
   <div v-if="item.type === 'link'" class="recent-item__description">
     <div class="property">{{item.property}}</div>
     <div class="value value--base">
-      <a href="item.linkHref">{{item.linkName}}</a>, {{item.linkInformations}}
+      <a class="link" href="item.linkHref">{{item.linkName}}</a>, {{item.linkInformations}}
     </div>
   </div>
 </li>
