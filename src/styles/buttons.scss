@@ -1,0 +1,47 @@
+button {
+  font-family: inherit;
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  font-weight: $fwMedium;
+  border-radius: 3px;
+  color: $textColor;
+  cursor: pointer;
+
+  &:focus {
+    outline: dotted 1px fade-out($textColor, 0.85);
+  }
+
+  &--primary {
+    padding: $spaceS2 $spaceBase;
+    border: solid 1px $primaryColor;
+    background-color: $primaryColor;
+    text-decoration: none;
+    transition: background-color .16s cubic-bezier(.69,.19,.71,.87),
+    border-color .16s cubic-bezier(.69,.19,.71,.87);
+  }
+
+  &--default {
+    padding: $spaceS2 $spaceBase;
+    border: solid 1px $lightBorder;
+    background-color: transparent;
+    text-decoration: none;
+    transition: border-color .16s cubic-bezier(.69,.19,.71,.87),
+    background-color .16s cubic-bezier(.69,.19,.71,.87);
+  }
+}
+
+.link {
+  @extend %text--link;
+
+  display: inline-block;
+  position: relative;
+  transition: color 0.2s ease-in;
+
+  &--accented {
+    color: $primaryColor;
+  }
+}

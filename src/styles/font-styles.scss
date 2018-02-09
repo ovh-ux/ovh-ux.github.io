@@ -1,0 +1,42 @@
+%text {
+  font-family: $fonts;
+  letter-spacing: $lsBase;
+  line-height: $lhBase;
+
+  &--base {
+    font-size: $fsBase;
+    font-weight: $fwBase;
+  }
+
+  &--small {
+    font-size: $fsS1;
+    font-weight: $fwBase;
+  }
+
+  &--link {
+    font-size: $fsBase;
+    font-weight: $fwMedium;
+    color: $textColor;
+  }
+}
+
+%title {
+  font-family: $fonts;
+  font-weight: $fwBase;
+  line-height: $lhS1;
+
+  &--main {
+    font-size: $fsL3;
+    letter-spacing: $lsS2;
+  }
+
+  &--second {
+    font-size: $fsL2;
+    letter-spacing: $lsS1;
+  }
+
+  &--minor {
+    font-size: $fsL1;
+    letter-spacing: $lsS1;
+  }
+}
