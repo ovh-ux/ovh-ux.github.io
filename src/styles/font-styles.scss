@@ -40,7 +40,7 @@
   }
 }
 
-%text-intro {
+.text-intro {
   font-family: $fonts;
   letter-spacing: $lsBase;
   line-height: $lhBase;
@@ -53,5 +53,29 @@
     line-height: $lhBase;
     font-size: $fsL1;
     letter-spacing: $lsS1;
+  }
+}
+
+.property {
+  @extend %text;
+  @extend %text--base;
+
+  color: $primaryColor;
+}
+
+.value {
+  &--small {
+    @extend %text;
+    @extend %text--base;
+  }
+
+  &--base {
+    @extend %title;
+    @extend %title--second;
+  }
+
+  &--large {
+    @extend %title;
+    @extend %title--main;
   }
 }

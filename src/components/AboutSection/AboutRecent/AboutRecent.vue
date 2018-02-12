@@ -1,7 +1,7 @@
 <template>
-<section class="about__recent">
-  <h2 class="about__title">Recent activity</h2>
-  <ul class="about__recent-list">
+<section class="about-recent">
+  <h2 class="about-recent__title">Recent activity</h2>
+  <ul class="about-recent__list">
     <about-recent-item v-for="item in recentItems"
       :key="item.id"
       :item="item"></about-recent-item>
@@ -40,5 +40,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+@import "./AboutRecent";
 </style>

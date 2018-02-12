@@ -1,14 +1,17 @@
 <template>
-<li class="technology-item">
-  <div class="technologies-logo-container">
-    <img :src="'./assets/images/logos/' + technology.logo + '.svg'" alt="">
+<li class="about-technology-item">
+  <div class="about-technology-item__graph">
+    <div class="about-technology-item__logo-container">
+      <img :src="'./assets/images/logos/' + technology.logo + '.svg'" alt=""
+        class="about-technology-item__logo">
+    </div>
+    <div class="about-technology-item__amount">
+      <div class="about-technology-item__gradient"></div>
+    </div>
   </div>
-  <div class="technologies-amount">
-    <div class="technologies-gradient"></div>
-  </div>
-  <div class="technologies-legend">
+  <div class="about-technology-item__legend">
     <div class="property">{{technology.name}}</div>
-    <div class="value value--l1">{{technology.projectsAmount}}</div>
+    <div class="value value--base">{{technology.projectsAmount}}</div>
   </div>
 </li>
 </template>
@@ -24,5 +27,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+@import "./AboutTechnologyItem";
 </style>

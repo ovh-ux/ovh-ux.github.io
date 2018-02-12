@@ -1,0 +1,25 @@
+.about-recent {
+  padding: $spaceL2 $spaceBase 0 $spaceBase;
+  margin: 0;
+
+  &__title {
+    @extend %title;
+    @extend %title--main;
+
+    margin: 0 0 $spaceL2 0;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  @media screen and (min-width: $bpS) and (orientation: landscape) {
+    &__list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}

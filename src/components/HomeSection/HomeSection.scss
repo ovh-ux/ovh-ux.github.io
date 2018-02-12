@@ -38,8 +38,6 @@
     }
 
     &-text {
-      @extend %text-intro;
-
       padding: 0;
       margin: 0 0 $spaceBase 0;
       text-align: center;
@@ -60,7 +58,7 @@
 
     &__header {
       box-sizing: border-box;
-      width: 25%;
+      width: 33.3%;
       padding: 0 0 0 $spaceL2;
     }
 
@@ -86,7 +84,7 @@
 
     &__intro {
       box-sizing: border-box;
-      width: 75%;
+      width: 66.7%;
       padding: 0 $spaceL2 0 0;
 
       &-title {

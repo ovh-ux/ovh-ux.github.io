@@ -1,0 +1,50 @@
+.about-technologies {
+  padding: $spaceL3 $spaceBase $spaceXL2 $spaceBase;
+  margin: 0;
+
+  &__title {
+    @extend %title;
+    @extend %title--main;
+
+    margin: 0 0 $spaceL2 0;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  &__legend {
+    margin-top: $spaceBase;
+    text-align: right;
+  }
+
+  @media screen and (min-width: $bpS) and (orientation: landscape){
+    &__list {
+      display: flex;
+      flex-direction: row;
+      justify-content: stretch;
+    }
+
+    &__legend {
+      text-align: left;
+    }
+  }
+
+  @media screen and (min-width: $bpL) and (orientation: landscape){
+    &__dataviz {
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+    }
+
+    &__list {
+      width: 83.3%;
+    }
+
+    &__legend {
+      width: 16.7%;
+    }
+  }
+}

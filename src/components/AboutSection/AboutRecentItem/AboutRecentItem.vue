@@ -1,5 +1,5 @@
 <template>
-<li class="recent-item">
+<li class="about-recent-item">
   <div class="icon-container icon-container--base">
     <svg xmlns="http://www.w3.org/2000/svg"
       class="icon"
@@ -7,13 +7,13 @@
       <use :href="'#' + item.icon + '_32px'" />
     </svg>
   </div>
-  <div v-if="item.type === 'number'" class="recent-item__description">
-    <div class="value value--l2">{{item.value}}</div>
+  <div v-if="item.type === 'number'" class="about-recent-item__description">
+    <div class="value value--large">{{item.value}}</div>
     <div class="property">{{item.property}}</div>
   </div>
-  <div v-if="item.type === 'link'" class="recent-item__description">
+  <div v-if="item.type === 'link'" class="about-recent-item__description">
     <div class="property">{{item.property}}</div>
-    <div class="value value--base">
+    <div class="value value--small">
       <a class="link" href="item.linkHref">{{item.linkName}}</a>, {{item.linkInformations}}
     </div>
   </div>
@@ -31,5 +31,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+@import "./AboutRecentItem";
 </style>

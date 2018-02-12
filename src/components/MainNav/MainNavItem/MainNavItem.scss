@@ -2,7 +2,7 @@
   display: inline-block;
   width: .375rem;
   height: .375rem;
-  border: solid 1px white;
+  border: solid 0.063rem white;
   margin-top: $spaceL3;
   margin-right: $spaceL2;
   position: relative;
@@ -27,7 +27,7 @@
     &::before {
       width: .875rem;
       height: .875rem;
-      border: solid 1px fade-out(white, .85);
+      border: solid 0.063rem fade-out(white, .85);
       top: -.313rem;
       left: -.313rem;
     }
@@ -35,7 +35,7 @@
     &::after {
       width: 1.875rem;
       height: 1.875rem;
-      border: solid 1px fade-out(white, .92);
+      border: solid 0.063rem fade-out(white, .92);
       top: -.813rem;
       left: -.813rem;
     }
@@ -63,7 +63,7 @@
     &::after {
       content: "";
       display: block;
-      width: 1px;
+      width: 0.063rem;
       height: 1.25rem;
       position: absolute;
       top: 100%;

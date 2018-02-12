@@ -12,12 +12,12 @@ button {
   cursor: pointer;
 
   &:focus {
-    outline: dotted 1px fade-out($textColor, 0.85);
+    outline: dotted 0.063rem fade-out($textColor, 0.85);
   }
 
   &--primary {
     padding: $spaceS2 $spaceBase;
-    border: solid 1px $primaryColor;
+    border: solid 0.063rem $primaryColor;
     background-color: $primaryColor;
     text-decoration: none;
     transition: background-color .16s cubic-bezier(.69,.19,.71,.87),
@@ -33,7 +33,7 @@ button {
 
   &--default {
     padding: $spaceS2 $spaceBase;
-    border: solid 1px $primaryColor;
+    border: solid 0.063rem $primaryColor;
     background-color: transparent;
     text-decoration: none;
     transition: border-color .16s cubic-bezier(.69,.19,.71,.87),
