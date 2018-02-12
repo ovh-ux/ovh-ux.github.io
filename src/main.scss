@@ -7,6 +7,8 @@
 @include font-face("SourceSansPro", "assets/fonts/sourcesanspro-semibold-webfont", 600, normal);
 
 @import "src/styles/font-styles";
+@import "src/styles/buttons";
+@import "src/styles/icons";
 
 body {
   @extend %text;

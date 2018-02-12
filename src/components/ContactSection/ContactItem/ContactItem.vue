@@ -1,6 +1,6 @@
 <template>
 <li class="contact-item">
-  <div class="icon-container">
+  <div class="icon-container icon-container--large">
     <svg xmlns="http://www.w3.org/2000/svg"
       class="icon"
       aria-hidden="true">

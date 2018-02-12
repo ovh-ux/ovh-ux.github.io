@@ -1,0 +1,49 @@
+.icon {
+  display: inline-block;
+  fill: none;
+  stroke: white;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &-container {
+    display: inline-block;
+    border: solid 1px $primaryColor;
+    position: relative;
+    border-radius: 50%;
+
+    &--base {
+      width: 3.875rem;
+      height: 3.875rem;
+
+      .icon {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    &--small {
+      width: 2.875rem;
+      height: 2.875rem;
+
+      .icon {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+
+    &--large {
+      width: 7.125em;
+      height: 7.125em;
+      border-width: .188rem;
+
+      .icon {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+}

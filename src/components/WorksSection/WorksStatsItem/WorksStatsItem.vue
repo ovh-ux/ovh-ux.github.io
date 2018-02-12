@@ -1,6 +1,6 @@
 <template>
 <li class="stats-item">
-  <div class="icon-container">
+  <div class="icon-container icon-container--small">
     <svg xmlns="http://www.w3.org/2000/svg"
           class="icon"
           aria-hidden="true">
