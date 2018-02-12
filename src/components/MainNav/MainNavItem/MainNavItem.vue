@@ -1,6 +1,6 @@
 <template>
-<li class="main-nav">
-  <a :href="'#' + mainNavItem">{{mainNavItem}}</a>
+<li class="main-nav-item">
+  <a :href="'#' + mainNavItem" class="main-nav-item__link">{{mainNavItem}}</a>
 </li>
 </template>
 
@@ -15,5 +15,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import './MainNavItem';
 </style>

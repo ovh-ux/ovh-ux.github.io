@@ -1,6 +1,6 @@
 <template>
 <nav class="main-nav">
-  <ul>
+  <ul class="main-nav__list">
     <main-nav-item v-for="mainNavItem in mainNavItems"
       :key="mainNavItem.id"
       :mainNavItem="mainNavItem"></main-nav-item>
@@ -29,5 +29,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import './MainNav';
 </style>
