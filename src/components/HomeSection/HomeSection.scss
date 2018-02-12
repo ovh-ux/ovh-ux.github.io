@@ -1,0 +1,113 @@
+.home {
+  &__header {
+    padding: $spaceL1 0 0 0;
+    margin: 0;
+    position: relative;
+  }
+
+  &__ux-logo {
+    width: 25%;
+    max-width: 7.5rem;
+    margin: 0 auto $spaceL1 auto;
+  }
+
+  &__ovh-logo {
+    width: 15%;
+    max-width: 4rem;
+    margin: 0 auto $spaceL2 auto;
+  }
+
+  &__intro {
+    padding: 0 $spaceBase $spaceXL2 $spaceBase;
+
+    &-title {
+      @extend %title;
+      @extend %title--main;
+
+      margin: 0 0 $spaceL1 0;
+      text-align: center;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 6.25rem;
+        height: .188rem;
+        margin: $spaceL1 auto 0 auto;
+        background-color: $primaryColor;
+      }
+    }
+
+    &-text {
+      @extend %text-intro;
+
+      padding: 0;
+      margin: 0 0 $spaceBase 0;
+      text-align: center;
+
+      &:last-child {
+        margin-bottom: 0;;
+      }
+    }
+  }
+
+  @media screen and (min-width: $bpS) and (orientation: landscape) {
+    display: flex;
+    height: 100vh;
+    min-height: 35rem;
+    max-height: 50rem;
+    flex-direction: row;
+    align-items: center;
+
+    &__header {
+      box-sizing: border-box;
+      width: 25%;
+      padding: 0 0 0 $spaceL2;
+    }
+
+    &__ux-logo {
+      width: 50%;
+      max-width: 11.25rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    &__ovh-logo {
+      width: 35%;
+      max-width: 6.25rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0;
+      transform: translate(-50%, 200%);
+    }
+
+    &__intro {
+      box-sizing: border-box;
+      width: 75%;
+      padding: 0 $spaceL2 0 0;
+
+      &-title {
+        padding: 0 10%;
+        margin-bottom: $spaceL2;
+        text-align: left;
+
+        &::after {
+          margin: $spaceL2 0 0 0;
+        }
+      }
+
+      &-text {
+        padding: 0 10%;
+        margin-bottom: $spaceL1;
+        text-align: left;
+
+        &:last-child {
+          margin-bottom: 5rem;
+        }
+      }
+    }
+  }
+}

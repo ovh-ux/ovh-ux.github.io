@@ -1,4 +1,4 @@
-%text {
+ %text {
   font-family: $fonts;
   letter-spacing: $lsBase;
   line-height: $lhBase;
@@ -35,6 +35,22 @@
   }
 
   &--minor {
+    font-size: $fsL1;
+    letter-spacing: $lsS1;
+  }
+}
+
+%text-intro {
+  font-family: $fonts;
+  letter-spacing: $lsBase;
+  line-height: $lhBase;
+  font-size: $fsBase;
+  font-weight: $fwBase;
+
+  @media screen and (min-width: $bpS) and (orientation: landscape) {
+    font-family: $fonts;
+    letter-spacing: $lsBase;
+    line-height: $lhBase;
     font-size: $fsL1;
     letter-spacing: $lsS1;
   }
