@@ -1,5 +1,5 @@
 <template>
-<li class="stats-item">
+<li class="works-stats-item">
   <div class="icon-container icon-container--small">
     <svg xmlns="http://www.w3.org/2000/svg"
           class="icon"
@@ -7,8 +7,8 @@
         <use :href="'#' + stat.icon + '_20px'" />
     </svg>
   </div>
-  <div class="stats-item__description">
-    <div class="value value--l1">{{stat.value}}</div>
+  <div class="works-stats-item__description">
+    <div class="value value--base">{{stat.value}}</div>
     <div class="property">{{stat.property}}</div>
   </div>
 </li>
@@ -25,5 +25,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+@import "./WorksStatsItem";
 </style>

@@ -1,0 +1,66 @@
+.agile {
+  &__track {
+    align-items: flex-start;
+  }
+
+  &__arrow {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    position: absolute;
+    top: 2.25rem;
+    background-color: $secondaryColor;
+    cursor: pointer;
+
+    &--prev {
+      left: 0;
+
+      .agile__arrow-icon {
+        transform: translateX(-.125rem);
+      }
+    }
+
+    &--next {
+      right: 0;
+
+      .agile__arrow-icon {
+        transform: translateX(.125rem);
+      }
+    }
+
+    &-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: none;
+      stroke: white;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+  }
+
+  @media screen and (min-width: $bpS) and (orientation: landscape) {
+    &__arrow {
+      width: 2.5rem;
+      height: 5rem;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &--prev {
+        border-radius: 0 2.5rem 2.5rem 0;
+
+        .agile__arrow-icon {
+          transform: translateX(-$spaceS3);
+        }
+      }
+
+      &--next {
+        border-radius: 2.5rem 0 0 2.5rem;
+
+        .agile__arrow-icon {
+          transform: translateX($spaceS3);
+        }
+      }
+    }
+  }
+}

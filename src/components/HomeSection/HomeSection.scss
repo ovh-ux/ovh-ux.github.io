@@ -88,23 +88,36 @@
       padding: 0 $spaceL2 0 0;
 
       &-title {
-        padding: 0 10%;
+        padding: 0 0 0 $spaceL2;
         margin-bottom: $spaceL2;
         text-align: left;
 
         &::after {
+          width: 12.5rem;
           margin: $spaceL2 0 0 0;
         }
       }
 
       &-text {
-        padding: 0 10%;
+        padding: 0 0 0 $spaceL2;
         margin-bottom: $spaceL1;
         text-align: left;
 
         &:last-child {
           margin-bottom: 5rem;
         }
+      }
+    }
+  }
+
+  @media screen and (min-width: $bpL) and (orientation: landscape) {
+    &__intro {
+      &-title {
+        padding: 0 10% 0 0;
+      }
+
+      &-text {
+        padding: 0 10% 0 0;
       }
     }
   }
