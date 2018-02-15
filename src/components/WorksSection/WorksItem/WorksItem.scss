@@ -77,7 +77,7 @@
     min-height: 35rem;
     max-height: 50rem;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
 
     &__illustration {
       width: 33.3%;
@@ -87,7 +87,7 @@
 
     &__description {
       flex-grow: 1;
-      padding: $spaceL2 $spaceL2 $spaceXL2 $spaceL2;
+      padding: $spaceL2;
     }
 
     &__stats-list {
@@ -100,7 +100,7 @@
 
   @media screen and (min-width: $bpL) and (orientation: landscape) {
     &__description {
-      padding: $spaceL2 10% $spaceXL2 10%;
+      padding: $spaceXL2 10% $spaceXL2 10%;
     }
   }
 }

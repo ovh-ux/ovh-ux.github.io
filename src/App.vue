@@ -2,8 +2,10 @@
   <div id="app">
     <main-nav></main-nav>
     <main>
-      <home-section></home-section>
-      <about-section></about-section>
+      <div class="main-gradient">
+        <home-section></home-section>
+        <about-section></about-section>
+      </div>
       <works-section></works-section>
       <contact-section></contact-section>
     </main>

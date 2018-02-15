@@ -18,3 +18,7 @@ body {
   color: $textColor;
   background-color: $backgroundColor;
 }
+
+.main-gradient {
+  background: linear-gradient(330deg, fade-out($secondaryColor, .75), transparent);
+}

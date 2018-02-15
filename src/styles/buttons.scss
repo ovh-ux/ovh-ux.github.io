@@ -51,7 +51,6 @@ button {
 .link {
   @extend %text--link;
 
-  display: inline-block;
   position: relative;
   color: $textColor;
 

@@ -22,4 +22,8 @@
       align-items: center;
     }
   }
+
+  @media screen and (min-width: $bpL) and (orientation: landscape) {
+    padding: $spaceL2 $spaceL2 0 $spaceL2;
+  }
 }

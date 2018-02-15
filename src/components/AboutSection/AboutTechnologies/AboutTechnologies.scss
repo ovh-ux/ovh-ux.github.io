@@ -33,6 +33,8 @@
   }
 
   @media screen and (min-width: $bpL) and (orientation: landscape){
+    padding: $spaceL3 $spaceL2 $spaceXL2 $spaceL2;
+
     &__dataviz {
       display: flex;
       flex-direction: row;

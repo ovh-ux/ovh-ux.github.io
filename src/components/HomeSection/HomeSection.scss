@@ -1,8 +1,44 @@
 .home {
+  position: relative;
+
+  &__gradient {
+    width: 100vw;
+    height: 100vw;
+    max-width: 25rem;
+    position: absolute;
+    bottom: 5rem;
+    left: 100%;
+    z-index: -1;
+    opacity: .25;
+    background: radial-gradient(circle closest-side at center, $turquoise, transparent);
+    transform: translate(-50%, 50%);
+  }
   &__header {
     padding: $spaceL1 0 0 0;
     margin: 0;
     position: relative;
+  }
+
+  &__illustration {
+    width: 130%;
+    height: auto;
+    max-width: 38.750rem;
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+
+    &::before {
+      content: "";
+      width: 110%;
+      height: 110%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: radial-gradient(circle closest-side at center, $backgroundColorLighter, transparent);
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__ux-logo {
@@ -62,6 +98,10 @@
       padding: 0 0 0 $spaceL2;
     }
 
+    &__illustration {
+      top: 50%;
+    }
+
     &__ux-logo {
       width: 50%;
       max-width: 11.25rem;
@@ -112,6 +152,7 @@
 
   @media screen and (min-width: $bpL) and (orientation: landscape) {
     &__intro {
+      padding-right: 0;
       &-title {
         padding: 0 10% 0 0;
       }
