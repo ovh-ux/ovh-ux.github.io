@@ -1,5 +1,5 @@
 <template>
-<section class="main__section works">
+<section id="Works" class="main__section works">
   <agile class="works__list"
     :dots="false" :prevArrow="leftArrow" :nextArrow="rightArrow">
     <works-item v-for="work in works"

@@ -1,5 +1,5 @@
 <template>
-<section class="main__section contact">
+<section id="Contact" class="main__section contact">
   <ul class="contact__list">
     <contact-item v-for="contactMean in contactMeans"
       :key="contactMean.id"

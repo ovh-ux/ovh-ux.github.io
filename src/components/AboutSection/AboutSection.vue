@@ -1,5 +1,5 @@
 <template>
-<section class="main__section about">
+<section id="About" class="main__section about">
   <about-recent></about-recent>
   <about-technologies></about-technologies>
 </section>

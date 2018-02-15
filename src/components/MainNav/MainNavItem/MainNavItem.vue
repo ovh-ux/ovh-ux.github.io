@@ -1,6 +1,9 @@
 <template>
 <li class="main-nav-item">
-  <a :href="'#' + mainNavItem" class="main-nav-item__link">{{mainNavItem}}</a>
+  <a :href="'#' + mainNavItem" class="main-nav-item__link">
+    <span class="main-nav-item__link-indicator"></span>
+    <span class="main-nav-item__link-label">{{mainNavItem}}</span>
+  </a>
 </li>
 </template>
 

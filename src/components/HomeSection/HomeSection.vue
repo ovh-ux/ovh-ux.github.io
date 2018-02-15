@@ -1,5 +1,5 @@
 <template>
-<section id="Home"  class="main__section home">
+<section id="Home" class="main__section home">
   <div class="home__gradient"></div>
   <header class="home__header">
     <div class="home__illustration">
