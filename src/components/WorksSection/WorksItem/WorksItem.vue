@@ -26,6 +26,10 @@
           class="works-item__tags-item">{{tag}}</li>
       </ul>
     </div>
+    <div class="works-item__CTA">
+      <a :href="work.link" target="_blank"
+        class="btn btn--primary">See the project</a>
+    </div>
   </section>
 </div>
 </template>

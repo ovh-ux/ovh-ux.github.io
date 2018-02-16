@@ -51,7 +51,8 @@ export default {
           tags: [
             'tag01',
             'tag02'
-          ]
+          ],
+          link: 'https://github.com/ovh-ux/ovh-manager-telecom'
         },
         {
           name: 'Cloud Control Panel',
@@ -78,7 +79,8 @@ export default {
             'tag01',
             'tag02',
             'tag03'
-          ]
+          ],
+          link: 'https://github.com/ovh-ux/ovh-manager-cloud'
         }
       ]
     }
