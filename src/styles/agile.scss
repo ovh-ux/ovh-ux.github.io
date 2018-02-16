@@ -12,8 +12,11 @@
     top: 2.25rem;
     background-color: $secondaryColor;
     cursor: pointer;
+    transition: background-color .16s cubic-bezier(.69,.19,.71,.87);
 
     &--prev {
+      border: solid 1px $secondaryColor;
+      border-left: none;
       left: 0;
 
       .agile__arrow-icon {
@@ -22,6 +25,8 @@
     }
 
     &--next {
+      border: solid 1px $secondaryColor;
+      border-right: none;
       right: 0;
 
       .agile__arrow-icon {
@@ -36,6 +41,27 @@
       stroke: white;
       stroke-linecap:round;
       stroke-linejoin:round;
+      transition: transform .16s ease-out;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $backgroundColorLighter;
+
+      &.agile__arrow {
+        &--prev {
+          .agile__arrow-icon {
+            transform: translateX(-.625rem);
+          }
+        }
+
+        &--next {
+          .agile__arrow-icon {
+            transform: translateX(.625rem);
+          }
+        }
+      }
     }
   }
 

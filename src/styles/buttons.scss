@@ -21,7 +21,7 @@ button {
     background-color: $primaryColor;
     text-decoration: none;
     transition: background-color .16s cubic-bezier(.69,.19,.71,.87),
-    border-color .16s cubic-bezier(.69,.19,.71,.87);
+      border-color .16s cubic-bezier(.69,.19,.71,.87);
 
     &:hover,
     &:active,
@@ -53,8 +53,16 @@ button {
 
   position: relative;
   color: $textColor;
+  border-bottom: solid 0 $textColor;
+  transition: all .1s ease-out;
 
   &.link--accented {
     color: $primaryColor;
+    border-bottom: solid 0 $primaryColor;
+  }
+
+  &:hover,
+  &.link--accented:hover {
+    border-width: .188rem;
   }
 }

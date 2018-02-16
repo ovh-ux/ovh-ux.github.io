@@ -16,16 +16,18 @@
       position: absolute;
       bottom: 0;
       left: 50%;
+      background-color: transparent;
       border-radius: 50%;
       transform: translateX(-50%);
+      transition: all .2s ease-in;
 
       &::before,
       &::after {
         content: "";
         display: block;
         position: absolute;
-        opacity: 0;
         border-radius: 50%;
+        transform: scale(0);
       }
 
       &::before {
@@ -34,6 +36,7 @@
         border: solid 0.063rem fade-out(white, .85);
         top: -.313rem;
         left: -.313rem;
+        transition: transform .28s cubic-bezier(.1,1.2,.75,1.1) .08s;
       }
 
       &::after {
@@ -42,6 +45,7 @@
         border: solid 0.063rem fade-out(white, .92);
         top: -.813rem;
         left: -.813rem;
+        transition: transform .32s cubic-bezier(.1,1.2,.75,1.1);
       }
     }
 
@@ -51,13 +55,16 @@
 
       padding: $spaceS3 $spaceS2;
       position: absolute;
-      top: 0;
+      top: $spaceBase;
       left: 50%;
       color: $textColor;
       line-height: 1em;
       text-decoration: none;
       opacity: 0;
-      transform: translateX(-50%);
+      transform: translateX(-50%) scale(.6);
+      transition: opacity .24s ease-out .1s,
+        top .42s ease-out,
+        transform .42s ease-out;
 
       &::after {
         content: "";
@@ -67,29 +74,48 @@
         position: absolute;
         top: 100%;
         left: 50%;
-        opacity: 0;
         background-color: fade-out(white, .6);
-        transform: translateX(-50%);
+        transform-origin: center top;
+        transform: translateX(-50%) scale(0);
+        transition: transform .3s ease-out;
       }
     }
 
     &:hover,
+    &:focus,
+    &:active,
     &--active {
+      outline: none;
+
       .main-nav-item__link {
         &-indicator {
           &::before,
           &::after {
-            opacity: 1;
+            transform: scale(1);
           }
         }
 
         &-label {
           opacity: 1;
+          transform: translateX(-50%) scale(1);
         }
       }
     }
 
-    &--active {
+    &:hover,
+    &:focus,
+    &:active {
+      .main-nav-item__link {
+        &-label {
+          top: $spaceS2;
+        }
+      }
+    }
+
+    &--active,
+    &--active:hover,
+    &--active:focus,
+    &--active:active {
       .main-nav-item__link {
         &-indicator {
           border-color: $primaryColor;
@@ -97,11 +123,12 @@
         }
 
         &-label {
+          top: 0;
           background-color: $primaryColor;
           color: $textColorReverse;
 
           &::after {
-            opacity: 1;
+            transform: translateX(-50%) scale(1);
           }
         }
       }
