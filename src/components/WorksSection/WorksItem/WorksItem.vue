@@ -4,32 +4,55 @@
 
   <section class="works-item__description">
     <h2 class="works-item__title">{{work.name}}</h2>
-    <div class="works-item__description-category">
-      <h3 class="works-item__description-category-title">About</h3>
-      <p class="works-item__description-category-text">{{work.description}}</p>
-    </div>
 
-    <div class="works-item__description-category">
-      <h3 class="works-item__description-category-title">Stats</h3>
-      <ul class="works-item__stats-list">
-        <works-stats-item v-for="stat in work.stats"
-          :key="stat.id"
-          :stat="stat"></works-stats-item>
-      </ul>
-    </div>
+    <template v-if="work.type === 'interface'">
+      <div class="works-item__description-category">
+        <h3 class="works-item__description-category-title">About</h3>
+        <p class="works-item__description-category-text">{{work.description}}</p>
+      </div>
 
-    <div class="works-item__description-category">
-      <h3 class="works-item__description-category-title">Tags</h3>
-      <ul class="works-item__tags-list">
-        <li v-for="tag in work.tags"
-          :key="tag.id"
-          class="works-item__tags-item">{{tag}}</li>
+      <div class="works-item__description-category">
+        <h3 class="works-item__description-category-title">Stats</h3>
+        <ul class="works-item__stats-list">
+          <works-stats-item v-for="stat in work.stats"
+            :key="stat.id"
+            :stat="stat"></works-stats-item>
+        </ul>
+      </div>
+
+      <div class="works-item__description-category">
+        <h3 class="works-item__description-category-title">Tags</h3>
+        <ul class="works-item__tags-list">
+          <li v-for="tag in work.tags"
+            :key="tag.id"
+            class="works-item__tags-item">{{tag}}</li>
+        </ul>
+      </div>
+      <div class="works-item__CTA">
+        <a :href="work.link" target="_blank"
+          class="btn btn--primary">See the project</a>
+      </div>
+    </template>
+
+    <template v-else>
+      <div class="works-item__introduction">{{work.description}}</div>
+      <ul class="works-item__sub-list">
+        <li class="works-item__sub-item"
+          v-for="subItem in work.items"
+          :key="subItem.id"
+          :item="subItem">
+          <h3 class="works-item__sub-item-title">
+            <a :href="subItem.link" target="_blank"
+              class="link link--accented">{{subItem.name}}</a>
+          </h3>
+          <p class="works-item__sub-item-description">{{subItem.description}}</p>
+        </li>
       </ul>
-    </div>
-    <div class="works-item__CTA">
-      <a :href="work.link" target="_blank"
-        class="btn btn--primary">See the project</a>
-    </div>
+      <div class="works-item__CTA">
+        <a :href="work.link" target="_blank"
+          class="btn btn--primary">{{work.linkLabel}}</a>
+      </div>
+    </template>
   </section>
 </div>
 </template>

@@ -8,7 +8,8 @@
   &__description {
     padding: $spaceL2 $spaceBase $spaceXL2 $spaceBase;
 
-    &-category {
+    &-category,
+    %works-item__description-category {
       padding: $spaceBase 0;
       border-bottom: solid .063rem $borderColor;
 
@@ -29,6 +30,30 @@
       }
 
       &-text {
+        margin: 0;
+      }
+    }
+  }
+
+  &__introduction {
+    margin-bottom: $spaceL2;
+  }
+
+  &__sub {
+    &-list {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    &-item {
+      @extend %works-item__description-category;
+
+      &-title {
+        margin: 0 0 $spaceS2 0;
+      }
+
+      &-description {
         margin: 0;
       }
     }
@@ -92,7 +117,7 @@
 
     &__description {
       flex-grow: 1;
-      padding: $spaceXL1 $spaceL2;
+      padding: $spaceL3 $spaceL2;
     }
 
     &__stats-list {
