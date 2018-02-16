@@ -16,14 +16,12 @@
   }
 
   @media screen and (min-width: $bpS) and (orientation: landscape) {
+    padding: $spaceL2 $spaceL2 0 $spaceL2;
+
     &__list {
       display: flex;
       flex-direction: row;
       align-items: center;
     }
-  }
-
-  @media screen and (min-width: $bpL) and (orientation: landscape) {
-    padding: $spaceL2 $spaceL2 0 $spaceL2;
   }
 }

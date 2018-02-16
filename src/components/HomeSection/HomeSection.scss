@@ -125,10 +125,10 @@
     &__intro {
       box-sizing: border-box;
       width: 66.7%;
-      padding: 0 $spaceL2 0 0;
+      padding: 0 $spaceL2;
 
       &-title {
-        padding: 0 0 0 $spaceL2;
+        padding: 0;
         margin-bottom: $spaceL2;
         text-align: left;
 
@@ -139,7 +139,7 @@
       }
 
       &-text {
-        padding: 0 0 0 $spaceL2;
+        padding: 0;
         margin-bottom: $spaceL1;
         text-align: left;
 
@@ -152,14 +152,7 @@
 
   @media screen and (min-width: $bpL) and (orientation: landscape) {
     &__intro {
-      padding-right: 0;
-      &-title {
-        padding: 0 10% 0 0;
-      }
-
-      &-text {
-        padding: 0 10% 0 0;
-      }
+      padding: 0 10%;
     }
   }
 }
