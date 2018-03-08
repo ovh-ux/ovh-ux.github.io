@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <main-nav></main-nav>
-    <main>
+    <main role="main">
       <div class="main-gradient">
         <home-section></home-section>
         <about-section></about-section>

@@ -1,5 +1,5 @@
 <template>
-<nav class="main-nav">
+<nav class="main-nav" role="navigation">
   <ul class="main-nav__list">
     <main-nav-item v-for="mainNavItem in mainNavItems"
       :key="mainNavItem.id"
