@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "node-sass": "^4.7.2",
-    "vue": "^2.5.2"
+    "sanitize.css": "^5.0.0",
+    "vue": "^2.5.2",
+    "vue-agile": "^0.3.7",
+    "vue-scrollactive": "^0.6.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
