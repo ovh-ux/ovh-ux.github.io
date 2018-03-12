@@ -14,6 +14,7 @@
 
 <script>
 import Vue from 'vue'
+import { mapGetters } from 'vuex'
 import VueScrollactive from 'vue-scrollactive'
 import MainNavItem from '@/components/MainNav/MainNavItem/MainNavItem';
 
@@ -24,16 +25,9 @@ export default {
   components: {
     MainNavItem
   },
-  data() {
-    return {
-      mainNavItems : [
-        'Home',
-        'About',
-        'Works',
-        'Contact'
-      ]
-    }
-  }
+  computed: mapGetters([
+    'mainNavItems'
+  ])
 }
 </script>
 

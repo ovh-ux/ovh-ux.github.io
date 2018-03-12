@@ -3,7 +3,7 @@
   <h2 class="about-technologies__title">Technologies we love</h2>
   <div class="about-technologies__dataviz">
     <ul class="about-technologies__list">
-      <about-technology-item v-for="technology in technologies"
+      <about-technology-item v-for="technology in aboutTechnologies"
         :key="technology.id"
         :technology="technology"></about-technology-item>
     </ul>
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import AboutTechnologyItem from '@/components/AboutSection/AboutTechnologyItem/AboutTechnologyItem';
 
 export default {
@@ -23,22 +24,9 @@ export default {
   components: {
     AboutTechnologyItem
   },
-  data() {
-    return {
-      technologies : [
-        {
-          name: 'Node.js',
-          logo: 'node-js',
-          projectsAmount: 0
-        },
-        {
-          name: 'HTML5',
-          logo: 'html5',
-          projectsAmount: 0
-        }
-      ]
-    }
-  }
+  computed: mapGetters([
+    'aboutTechnologies'
+  ])
 }
 </script>
 
