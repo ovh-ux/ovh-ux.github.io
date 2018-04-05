@@ -1,4 +1,5 @@
 'use strict'
+const chalk = require('chalk');
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
@@ -9,6 +10,14 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+var envVar = [
+  'API_URL'
+];
+envVar.forEach(varName => {
+  if (!process.env[varName]) {
+    console.log(chalk.red.bold(`>>> Env var ${varName} is missing !`));
+  }
+})
 
 
 module.exports = {

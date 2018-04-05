@@ -21,13 +21,16 @@
 </template>
 
 <script>
+
+import { mapActions } from 'vuex'
+
 export default {
   name: 'AboutRecentItem',
   props: {
     item: {
       type: Object
     }
-  }
+  },
 }
 </script>
 
