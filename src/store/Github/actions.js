@@ -2,7 +2,7 @@ import { api } from '../../utils/request';
 import lodash from 'lodash'
 
 function getCommits (repo) {
-    return api.get('/api/repos/ovh-ux/' + repo + '/commits?per_page=500').then(response => {
+    return api.get('/api/repos/ovh-ux/' + repo + '/commits?per_page=100').then(response => {
         var data = response.data;
         var commits = [];
 
@@ -65,11 +65,12 @@ export default {
                     else if (language_obj[lang] != null && lang != null)
                         language_obj[lang] += 1;
                 });
-
-                sort = _.reduceRight(_.invert(_.invert(language_obj)), function(current, val, key){    
-                    current[key] = parseInt(val);
-                    return current;
-                },{});
+                
+                sort = _.sortBy(_.keys(language_obj), function(current){
+                    return -language_obj[current];
+                });
+                
+                sort = _.pick(language_obj, sort);
 
                 commit('ABOUT_TECHNO', sort);
             }

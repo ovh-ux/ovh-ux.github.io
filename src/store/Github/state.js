@@ -21,18 +21,7 @@ export default {
         type :'link'
       }
     ],
-    aboutTechnologies: [
-      // {
-      //   name: 'Node.js',
-      //   logo: 'node-js',
-      //   projectsAmount: 0
-      // },
-      // {
-      //   name: 'HTML5',
-      //   logo: 'html5',
-      //   projectsAmount: 0
-      // },
-    ],
+    aboutTechnologies: [],
     works: [
       {
         name: 'Telecom Control Panel',

@@ -5,6 +5,5 @@ export const api = axios.create({
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Accept': 'application/vnd.github.mercy-preview+json',
-    'Authorization': 'token 836acefda004c23bb8f8773f043ae36baa7bf4b8'
   }
 });
