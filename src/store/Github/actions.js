@@ -2,13 +2,12 @@ import { api } from '../../utils/request';
 import lodash from 'lodash'
 
 function getCommits (repo) {
-    return api.get('/api/repos/ovh-ux/' + repo + '/commits?per_page=100').then(response => {
+    return api.get('/api/repos/ovh-ux/' + repo + '/contributors').then(response => {
         var data = response.data;
-        var commits = [];
-
-        data.forEach(element => {
-            commits.push(element);
-        });
+        var commits = 0;
+        for(var i = 0; i < data.length; i++) {
+            commits += data[i].contributions
+        }
         return commits;
     })
 }

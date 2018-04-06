@@ -44,7 +44,7 @@ export default {
             }
         }
 
-        state.works[tomodif].stats[0].value = data.commits.length;
+        state.works[tomodif].stats[0].value = data.commits;
         state.works[tomodif].stats[1].value = data.contributors.length;
         state.works[tomodif].stats[2].value = moment(data.repo.pushed_at).fromNow();
         state.works[tomodif].description = data.repo.description;
