@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-ovh": "^0.1.1",
     "lodash": "^4.17.5",
     "moment": "^2.21.0",
     "node-sass": "^4.7.2",

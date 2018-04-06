@@ -2,7 +2,7 @@
 <section class="about-recent">
   <h2 class="about-recent__title">Recent activity</h2>
   <ul class="about-recent__list">
-    <about-recent-item  v-for="item in aboutRecentItems"
+    <about-recent-item v-for="item in aboutRecentItems"
       :key="item.id"
       :item="item">
       </about-recent-item>
