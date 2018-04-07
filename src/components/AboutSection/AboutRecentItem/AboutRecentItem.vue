@@ -14,20 +14,23 @@
   <div v-if="item.type === 'link'" class="about-recent-item__description">
     <div class="property">{{item.property}}</div>
     <div class="value value--small">
-      <a class="link" href="item.linkHref">{{item.linkName}}</a>, {{item.linkInformations}}
+      <a class="link" :href="item.linkHref">{{item.linkName}}</a>, {{item.linkInformations}}
     </div>
   </div>
 </li>
 </template>
 
 <script>
+
+import { mapActions } from 'vuex'
+
 export default {
   name: 'AboutRecentItem',
   props: {
     item: {
       type: Object
     }
-  }
+  },
 }
 </script>
 

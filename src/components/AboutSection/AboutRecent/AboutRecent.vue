@@ -4,7 +4,8 @@
   <ul class="about-recent__list">
     <about-recent-item v-for="item in aboutRecentItems"
       :key="item.id"
-      :item="item"></about-recent-item>
+      :item="item">
+      </about-recent-item>
   </ul>
 </section>
 </template>
@@ -16,10 +17,10 @@ import AboutRecentItem from '@/components/AboutSection/AboutRecentItem/AboutRece
 export default {
   name: 'AboutRecent',
   components: {
-    AboutRecentItem
+    AboutRecentItem,
   },
   computed: mapGetters([
-    'aboutRecentItems'
+    'aboutRecentItems',
   ])
 }
 </script>

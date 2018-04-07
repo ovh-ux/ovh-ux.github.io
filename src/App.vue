@@ -19,6 +19,8 @@ import AboutSection from '@/components/AboutSection/AboutSection'
 import WorksSection from '@/components/WorksSection/WorksSection'
 import ContactSection from '@/components/ContactSection/ContactSection'
 
+import { mapActions } from 'vuex'
+
 export default {
   name: 'App',
   components: {
@@ -27,6 +29,23 @@ export default {
     AboutSection,
     WorksSection,
     ContactSection
+  },
+  methods: mapActions({
+    upNbrRepos: 'nbrRepos',
+    upLastRepo: 'lastPushed',
+    upAboutTechno: 'aboutTechno',
+    upManager: 'manager',
+    upOtherProjects: 'otherProjects'
+  }),
+  mounted: function() {
+    this.upNbrRepos(),
+    this.upLastRepo(),
+    this.upAboutTechno(),
+    this.upManager('ovh-manager-telecom'),
+    this.upManager('ovh-manager-cloud'),
+    this.upManager('ovh-manager-web'),
+    this.upManager('ovh-manager-dedicated'),
+    this.upOtherProjects()
   }
 }
 </script>
