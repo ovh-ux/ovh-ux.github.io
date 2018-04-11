@@ -51,14 +51,15 @@ button {
 .link {
   @extend %text--link;
 
+  border-bottom: solid .063rem $textColor;
   position: relative;
   color: $textColor;
-  border-bottom: solid 0 $textColor;
+  text-decoration: none;
   transition: all .1s ease-out;
 
   &.link--accented {
     color: $primaryColor;
-    border-bottom: solid 0 $primaryColor;
+    border-bottom: solid .063rem $primaryColor;
   }
 
   &:hover,

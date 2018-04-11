@@ -23,3 +23,10 @@ body {
 .main-gradient {
   background: linear-gradient(330deg, fade-out($secondaryColor, .75), transparent);
 }
+
+@media screen and (min-width: $bpS) and (orientation: landscape) {
+  .main__section {
+    height: 100vh;
+    min-height: 35rem;
+  }
+}

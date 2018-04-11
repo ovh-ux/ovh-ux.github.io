@@ -8,7 +8,7 @@ export default {
     aboutRecentItems: [
         {
             icon: "puzzle",
-            property: "repositories on github",
+            property: "repositories on GitHub",
             value: 0,
             type: "number"
         },

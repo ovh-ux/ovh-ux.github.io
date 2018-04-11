@@ -9,9 +9,6 @@
 
   @media screen and (min-width: $bpS) and (orientation: landscape){
     display: flex;
-    height: 100vh;
-    min-height: 35rem;
-    max-height: 50rem;
     flex-direction: row;
     align-items: center;
     background: radial-gradient(circle farthest-side at top center, fade-out($primaryColor, .85), transparent);
