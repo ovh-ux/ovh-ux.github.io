@@ -1,10 +1,14 @@
 # ovh-ux-github-page
 
-> A Vue.js project
+> A Vue.js project from OVH UX team involving Github work.
+[Github page](https://github.com/ovh-ux)
 
 ## Build Setup
 
 ``` bash
+# setup environment
+export API_URL="https://api.github.com"
+
 # install dependencies
 npm install
 

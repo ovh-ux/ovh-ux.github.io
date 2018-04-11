@@ -1,8 +1,9 @@
 import { api } from "../../utils/request";
 import lodash from "lodash";
 
+
 function getCommits (repo) {
-    return api.get("/api/repos/ovh-ux/" + repo + "/contributors").then((response) => {
+    return api.get("/repos/ovh-ux/" + repo + "/contributors").then((response) => {
         const data = response.data;
         let commits = 0;
 
@@ -14,7 +15,7 @@ function getCommits (repo) {
 }
 
 function getContributors (repo) {
-    return api.get("/api/repos/ovh-ux/" + repo + "/contributors").then((response) => {
+    return api.get("/repos/ovh-ux/" + repo + "/contributors").then((response) => {
         const data = response.data;
         const contributors = [];
 
@@ -26,7 +27,7 @@ function getContributors (repo) {
 }
 
 function getTopics (repo) {
-    return api.get("/api/repos/ovh-ux/" + repo + "/topics").then((response) => {
+    return api.get("/repos/ovh-ux/" + repo + "/topics").then((response) => {
         const data = response.data.names;
         const topics = [];
 
@@ -39,19 +40,20 @@ function getTopics (repo) {
 
 export default {
     nbrRepos ({ commit }) {
-        return api.get("/api/users/ovh-ux").then((response) => {
+        return api.get("/users/ovh-ux").then((response) => {
             const nbr_repos = response.data.public_repos;
+
             commit("NBR_REPOS", nbr_repos);
         });
     },
     lastPushed ({ commit }) {
-        return api.get("/api/users/ovh-ux/repos?sort=pushed&direction=desc").then((response) => {
+        return api.get("/users/ovh-ux/repos?sort=pushed&direction=desc").then((response) => {
             const last = response.data[0];
             commit("LAST_PUSHED", last);
         });
     },
     aboutTechno ({ commit }) {
-        return api.get("/api/users/ovh-ux/repos?per_page=500").then((response) => {
+        return api.get("/users/ovh-ux/repos?per_page=500").then((response) => {
             const data = response.data;
             const language_obj = {};
             let lang;
@@ -77,7 +79,7 @@ export default {
         );
     },
     manager ({ commit }, repo) {
-        api.get("/api/repos/ovh-ux/" + repo).then((data) => {
+        api.get("/repos/ovh-ux/" + repo).then((data) => {
             getCommits(repo).then((commits) => {
                 getContributors(repo).then((contributors) => {
                     getTopics(repo).then((topics) => {
@@ -96,7 +98,7 @@ export default {
         });
     },
     otherProjects ({ commit }) {
-        return api.get("api/users/ovh-ux/repos?sort=pushed&direction=desc").then((response) => {
+        return api.get("/users/ovh-ux/repos?sort=pushed&direction=desc").then((response) => {
             const data = response.data;
             commit("OTHER_PROJECTS", data);
         });

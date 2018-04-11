@@ -1,9 +1,23 @@
 import axios from "axios";
+import localforage from "localforage";
+import { setupCache } from "axios-cache-adapter";
+
+const store = localforage.createInstance({ name: "ovh-ux" });
+
+export const cache = setupCache({
+    maxAge: 60 * 60 * 1000,
+    limit: 30,
+    store,
+    exclude: {
+        query: false
+    }
+});
 
 export const api = axios.create({
-    baseUrl: `${process.env.API_URL}`,
+    adapter: cache.adapter,
+    baseURL: `${process.env.API_URL}`,
+    method: "get",
     headers: {
-        "Access-Control-Allow-Origin": "*",
         Accept: "application/vnd.github.mercy-preview+json"
     }
 });
