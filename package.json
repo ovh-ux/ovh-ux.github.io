@@ -2,7 +2,7 @@
   "name": "ovh-ux-github-page",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Camille Gicquel <camille.gicquel@corp.ovh.com>",
+  "author": "OVH SAS",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

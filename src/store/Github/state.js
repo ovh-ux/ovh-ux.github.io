@@ -126,7 +126,7 @@ export default {
             items: [
                 {
                     name: "ovh-ui-kit-bs",
-                    description: "A bootstrap theme for the OVH managers, based on ovh-ui-kit.",
+                    description: "A Bootstrap theme for the OVH managers, based on ovh-ui-kit.",
                     link: "https://github.com/ovh-ux/ovh-ui-kit-bs"
                 },
                 {
@@ -172,20 +172,20 @@ export default {
         {
             name: "Discuss",
             icon: "speechbubble",
-            description: 'Whether you have questions, suggestions or requests, feel free to discuss with us on <a class="link link--accented" href="https://gitter.im/ovh/ux">Gitter</a>.'
+            description: 'Whether you have questions, suggestions or requests, feel free to discuss with us on <a class="link link--accented" href="https://gitter.im/ovh/ux" target="_blank" rel="noopener">Gitter</a>.'
         },
         {
             name: "Contribute",
             icon: "script",
             description: `Share with us your improvement ideas,
-            tell us about a bug you\'ve found by creating <a class="link link--accented"href="https://github.com/ovh-ux/ovh-ux-guidelines/blob/master/.github/CONTRIBUTING.md#finding-wonderful-bugs">
-            an issue</a>. Or contribute to our open source interfaces and components on <a class="link link--accented" href="https://github.com/ovh-ux">GitHub</a>.`
+            tell us about a bug you\'ve found by creating <a class="link link--accented" href="https://github.com/ovh-ux/ovh-ux-guidelines/blob/master/.github/CONTRIBUTING.md#finding-wonderful-bugs" target="_blank" rel="noopener">
+            an issue</a>. Or contribute to our open source interfaces and components on <a class="link link--accented" href="https://github.com/ovh-ux" target="_blank" rel="noopener">GitHub</a>.`
         },
         {
             name: "Join us",
             icon: "hands",
             description: `We are always seeking for talented people.
-            If you have the ambition, the passion and want to do something new, <a class="link link--accented" href="https://careers.ovh.com/fr/">please apply</a> : we will be very glad to meet you.`
+            If you have the ambition, the passion and want to do something new, <a class="link link--accented" href="https://careers.ovh.com/fr/" target="_blank" rel="noopener">please apply</a> : we will be very glad to meet you.`
         }
     ]
 };

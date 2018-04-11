@@ -29,8 +29,9 @@
         </ul>
       </div>
       <div class="works-item__CTA">
-        <a :href="work.link" target="_blank"
-          class="btn btn--primary">See the project</a>
+        <a :href="work.link"
+            target="_blank" rel="noopener"
+            class="btn btn--primary">See the project</a>
       </div>
     </template>
 
@@ -42,15 +43,17 @@
           :key="subItem.id"
           :item="subItem">
           <h3 class="works-item__sub-item-title">
-            <a :href="subItem.link" target="_blank"
-              class="link link--accented">{{subItem.name}}</a>
+            <a :href="subItem.link"
+                target="_blank" rel="noopener"
+                class="link link--accented">{{subItem.name}}</a>
           </h3>
           <p class="works-item__sub-item-description">{{subItem.description}}</p>
         </li>
       </ul>
       <div class="works-item__CTA">
-        <a :href="work.link" target="_blank"
-          class="btn btn--primary">{{work.linkLabel}}</a>
+        <a :href="work.link"
+            target="_blank" rel="noopener"
+            class="btn btn--primary">{{work.linkLabel}}</a>
       </div>
     </template>
   </section>
