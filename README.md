@@ -1,6 +1,6 @@
 # ovh-ux-github-page
 
-> A Vue.js project from OVH UX team involving Github work.
+> The OVH UX Team's Github page, made with Vue.js.
 [Github page](https://github.com/ovh-ux)
 
 ## Build Setup
