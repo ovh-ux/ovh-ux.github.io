@@ -1,6 +1,8 @@
 <template>
 <div class="slide works-item">
-  <section class="works-item__illustration"></section>
+  <section class="works-item__illustration">
+      <img :src="'./assets/images/illustrations/illustration_' + work.illustration + '.svg'" alt="">
+  </section>
 
   <section class="works-item__description">
     <h2 class="works-item__title">{{work.name}}</h2>

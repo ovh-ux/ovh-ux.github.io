@@ -27,6 +27,7 @@ export default {
             name: "Telecom Control Panel",
             type: "interface",
             description: "OVH Control Panel Telecom UI - Official Repository",
+            illustration: "telecom",
             stats: [
                 {
                     property: "Commits",
@@ -51,6 +52,7 @@ export default {
             name: "Cloud Control Panel",
             type: "interface",
             description: "OVH Control Panel Cloud UI - Official Repository",
+            illustration: "cloud",
             stats: [
                 {
                     property: "Commits",
@@ -75,6 +77,7 @@ export default {
             name: "Web Control Panel",
             type: "interface",
             description: "OVH Control Panel Web UI",
+            illustration: "web",
             stats: [
                 {
                     property: "Commits",
@@ -99,6 +102,7 @@ export default {
             name: "Dedicated UI Control Panel",
             type: "interface",
             description: "OVH Control Panel Dedicated UI",
+            illustration: "dedicated",
             stats: [
                 {
                     property: "Commits",
