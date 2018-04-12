@@ -26,7 +26,6 @@ body {
 
 @media screen and (min-width: $bpS) and (orientation: landscape) {
   .main__section {
-    height: 100vh;
-    min-height: 35rem;
+    min-height: 100vh;
   }
 }

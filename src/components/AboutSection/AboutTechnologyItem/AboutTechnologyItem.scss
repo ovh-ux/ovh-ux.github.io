@@ -1,4 +1,7 @@
 .about-technology-item {
+  $logoContainerSize: 3.875rem;
+  $graphSizeCalc: calc(((100% - #{$logoContainerSize}) * var(--projectPerTechno) / var(--allProjects)) + (#{$logoContainerSize} / 2));
+
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -19,12 +22,12 @@
     transform: translate(-50%, -50%);
 
     &-container {
-      width: 3.875rem;
-      height: 3.875rem;
+      width: $logoContainerSize;
+      height: $logoContainerSize;
       border: solid 0.063rem $primaryColor;
       position: absolute;
       top: 50%;
-      left: 8rem;
+      left: $graphSizeCalc;
       z-index: 2;
       background-color: white;
       border-radius: 50%;
@@ -33,7 +36,7 @@
   }
 
   &__amount {
-    width: 8rem;
+    width: $graphSizeCalc;
     height: 100%;
     border-right: solid 0.063rem $primaryColor;
     position: absolute;
@@ -60,8 +63,8 @@
 
   @media screen and (min-width: $bpS) and (orientation: landscape){
     flex-direction: column;
-    flex-grow: 1;
-    max-width: 6rem;
+    width: 6rem;
+    min-width: 4rem;
 
     &__graph {
       width: 100%;
@@ -73,13 +76,13 @@
     &__logo-container {
       top: auto;
       left: 50%;
-      bottom: 12rem;
+      bottom: $graphSizeCalc;
       transform: translate(-50%, 50%);
     }
 
     &__amount {
       width: 100%;
-      height: 12rem;
+      height: $graphSizeCalc;
       border-top: solid 0.063rem $primaryColor;
       border-right: none;
       top: auto;

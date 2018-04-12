@@ -1,11 +1,13 @@
 <template>
 <li class="about-technology-item">
   <div class="about-technology-item__graph">
-    <div class="about-technology-item__logo-container">
+    <div class="about-technology-item__logo-container"
+      :style="{'--projectPerTechno' : technology.projectsAmount, '--allProjects' : aboutRecentItems[0].value}">
       <img :src="'./assets/images/logos/' + technology.logo + '.svg'" alt=""
         class="about-technology-item__logo">
     </div>
-    <div class="about-technology-item__amount">
+    <div class="about-technology-item__amount"
+      :style="{'--projectPerTechno' : technology.projectsAmount, '--allProjects' : aboutRecentItems[0].value}">
       <div class="about-technology-item__gradient"></div>
     </div>
   </div>
@@ -17,13 +19,18 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'AboutTechnologyItem',
   props: {
     technology: {
       type: Object
     }
-  }
+  },
+  computed: mapGetters([
+    'aboutRecentItems',
+  ])
 }
 </script>
 

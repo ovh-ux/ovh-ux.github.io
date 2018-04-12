@@ -42,11 +42,11 @@
     }
 
     &__list {
-      width: 83.3%;
+      max-width: 83.3%;
     }
 
     &__legend {
-      width: 16.7%;
+        padding-left: $spaceL2;
     }
   }
 }
