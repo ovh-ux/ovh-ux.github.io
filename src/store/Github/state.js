@@ -127,6 +127,7 @@ export default {
             name: "Other projects",
             type: "listing",
             description: "Discover here some of the other projects, guidelines components... we have built.",
+            illustration: "components",
             items: [
                 {
                     name: "ovh-ui-kit-bs",
@@ -151,6 +152,7 @@ export default {
             name: "Publications",
             type: "listing",
             description: "As passionates about web development, we like sharing with you some of our experiences. These are some articles about topics that are dear to us (only in french, sorry ^^')",
+            illustration: "publications",
             items: [
                 {
                     name: "#OVHMeetup : Drupal et accessibilité web à l’heure des CMS API-First",

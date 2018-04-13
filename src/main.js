@@ -4,7 +4,7 @@ import App from "./App";
 import store from "./store/index";
 import Vue from "vue";
 
-const __svg__ = { path: "./assets/**/icons/*.svg", name: "[hash].icons.svg" };
+const __svg__ = { path: "./assets/images/**/*.svg", name: "[hash].icons.svg" };
 require("webpack-svgstore-plugin/src/helpers/svgxhr")(__svg__);
 
 Vue.config.productionTip = false;

@@ -3,8 +3,11 @@
   <div class="about-technology-item__graph">
     <div class="about-technology-item__logo-container"
       :style="{'--projectPerTechno' : technology.projectsAmount, '--allProjects' : aboutRecentItems[0].value}">
-      <img :src="'./assets/images/logos/' + technology.logo + '.svg'" alt=""
-        class="about-technology-item__logo">
+      <svg xmlns="http://www.w3.org/2000/svg"
+        class="about-technology-item__logo"
+        aria-hidden="true">
+        <use :href="'#' + technology.logo" />
+      </svg>
     </div>
     <div class="about-technology-item__amount"
       :style="{'--projectPerTechno' : technology.projectsAmount, '--allProjects' : aboutRecentItems[0].value}">

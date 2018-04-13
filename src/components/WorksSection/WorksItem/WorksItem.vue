@@ -1,7 +1,11 @@
 <template>
 <div class="slide works-item">
-  <section class="works-item__illustration">
-      <img :src="'./assets/images/illustrations/illustration_' + work.illustration + '.svg'" alt="">
+  <section class="works-item__illustration-container">
+      <svg xmlns="http://www.w3.org/2000/svg"
+        class="works-item__illustration"
+        aria-hidden="true">
+        <use :href="'#illustration_' + work.illustration" />
+      </svg>
   </section>
 
   <section class="works-item__description">
