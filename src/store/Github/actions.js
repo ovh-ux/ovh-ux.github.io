@@ -1,16 +1,26 @@
 import { api } from "../../utils/request";
 import lodash from "lodash";
 
+function getLastCommit (repo) {
+    return api.get("/repos/ovh-ux/" + repo + "/commits").then((response) => {
+        const last = response.data[0].sha;
+        return last;
+    });
+}
+
+function compareCommits (repo, first, last) {
+    return api.get(`/repos/ovh-ux/${repo}/compare/${first}...${last}`).then((response) => {
+        const total = response.data.total_commits;
+        return total;
+    });
+}
 
 function getCommits (repo) {
-    return api.get("/repos/ovh-ux/" + repo + "/contributors").then((response) => {
-        const data = response.data;
-        let commits = 0;
-
-        for (let i = 0; i < data.length; i++) {
-            commits += data[i].contributions;
-        }
-        return commits;
+    return getLastCommit(repo).then((lastcommit) => {
+        const first = { "ovh-manager-web": "6a63e7c0199620f8e62d73a378cde770bb51f56f", "ovh-manager-cloud": "44256bffb7ab124e9537c470cbfa42b4fae7432f", "ovh-manager-telecom": "7ddd35c7ccde0f55dd217852949c5ef83e9c85a9", "ovh-manager-dedicated": "c9c25615fb3e2a8f975e5906268dc259675be799" };
+        return compareCommits(repo, first[repo], lastcommit).then((response) => {
+            return response + 1;
+        });
     });
 }
 
