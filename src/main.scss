@@ -17,7 +17,11 @@ body {
   padding: 0;
   color: $textColor;
   background-color: $backgroundColor;
-  overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    overflow-x: hidden;
 }
 
 .main-gradient {
