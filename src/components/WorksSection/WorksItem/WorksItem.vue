@@ -4,7 +4,7 @@
       <svg xmlns="http://www.w3.org/2000/svg"
         class="works-item__illustration"
         aria-hidden="true">
-        <use :href="'#illustration_' + work.illustration" />
+        <use :xlink:href="'#illustration_' + work.illustration" />
       </svg>
   </section>
 

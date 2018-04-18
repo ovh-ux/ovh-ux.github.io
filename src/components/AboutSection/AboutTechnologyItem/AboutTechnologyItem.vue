@@ -6,7 +6,7 @@
       <svg xmlns="http://www.w3.org/2000/svg"
         class="about-technology-item__logo"
         aria-hidden="true">
-        <use :href="'#' + technology.logo" />
+        <use :xlink:href="'#' + technology.logo" />
       </svg>
     </div>
     <div class="about-technology-item__amount"

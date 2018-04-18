@@ -4,7 +4,7 @@
     <svg xmlns="http://www.w3.org/2000/svg"
       class="icon"
       aria-hidden="true">
-      <use :href="'#' + item.icon + '_32px'" />
+      <use :xlink:href="'#' + item.icon + '_32px'" />
     </svg>
   </div>
   <div v-if="item.type === 'number'" class="about-recent-item__description">

@@ -28,8 +28,8 @@ export default {
   ]),
   data() {
     return {
-      leftArrow: '<svg xmlns="http://www.w3.org/2000/svg" class="agile__arrow-icon"><use href="#leftarrow_20px" /></svg>',
-      rightArrow: '<svg xmlns="http://www.w3.org/2000/svg" class="agile__arrow-icon"><use href="#rightarrow_20px" /></svg>',
+      leftArrow: '<svg xmlns="http://www.w3.org/2000/svg" class="agile__arrow-icon"><use xlink:href="#leftarrow_20px" /></svg>',
+      rightArrow: '<svg xmlns="http://www.w3.org/2000/svg" class="agile__arrow-icon"><use xlink:href="#rightarrow_20px" /></svg>',
     }
   }
 }

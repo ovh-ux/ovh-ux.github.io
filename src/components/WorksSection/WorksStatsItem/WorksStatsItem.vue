@@ -4,7 +4,7 @@
     <svg xmlns="http://www.w3.org/2000/svg"
           class="icon"
           aria-hidden="true">
-        <use :href="'#' + stat.icon + '_20px'" />
+        <use :xlink:href="'#' + stat.icon + '_20px'" />
     </svg>
   </div>
   <div class="works-stats-item__description">

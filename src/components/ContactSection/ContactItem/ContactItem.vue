@@ -4,7 +4,7 @@
     <svg xmlns="http://www.w3.org/2000/svg"
       class="icon"
       aria-hidden="true">
-      <use :href="'#' + contactMean.icon + '_32px'" />
+      <use :xlink:href="'#' + contactMean.icon + '_32px'" />
     </svg>
   </div>
   <div class="contact-item__title">{{contactMean.name}}</div>

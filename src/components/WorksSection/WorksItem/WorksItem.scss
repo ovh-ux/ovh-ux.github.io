@@ -1,6 +1,10 @@
 .works-item {
   align-self: flex-start;
 
+  &:not(.agile__slide--active) {
+      visibility: hidden;
+  }
+
   &__illustration {
       width: 37.5rem;
       height: 37.5rem;
