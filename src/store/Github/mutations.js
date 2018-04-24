@@ -19,7 +19,11 @@ export default {
     [types.LAST_PUSHED] (state, data) {
         state.aboutRecentItems[1].linkName = data.name;
         state.aboutRecentItems[1].linkHref = data.html_url;
-        state.aboutRecentItems[1].linkInformations = moment(data.pushed_at).fromNow();
+        if (data.pushed_at !== undefined) {
+            state.aboutRecentItems[1].linkInformations = moment(data.pushed_at).fromNow();
+        } else if (data.push !== null) {
+            state.aboutRecentItems[1].linkInformations = data.push;
+        }
     },
     [types.ABOUT_TECHNO] (state, data) {
         for (const lang in data) {
@@ -38,6 +42,7 @@ export default {
         let tomodif;
         const repos = ["ovh-manager-telecom", "ovh-manager-cloud", "ovh-manager-web", "ovh-manager-dedicated"];
 
+
         for (let i = 0; i < repos.length; i++) {
             if (data.repo.name === repos[i]) {
                 tomodif = i;
@@ -45,8 +50,16 @@ export default {
         }
 
         state.works[tomodif].stats[0].value = data.commits;
-        state.works[tomodif].stats[1].value = data.contributors.length;
-        state.works[tomodif].stats[2].value = moment(data.repo.pushed_at).fromNow();
+        if (data.contributors !== undefined) {
+            state.works[tomodif].stats[1].value = data.contributors.length;
+        } else if (data.contrib !== undefined) {
+            state.works[tomodif].stats[1].value = data.contrib;
+        }
+        if (data.pushed_at !== undefined) {
+            state.works[tomodif].stats[2].value = moment(data.repo.pushed_at).fromNow();
+        } else if (data.push !== undefined) {
+            state.works[tomodif].stats[2].value = data.push;
+        }
         state.works[tomodif].description = data.repo.description;
         state.works[tomodif].link = data.repo.html_url;
 

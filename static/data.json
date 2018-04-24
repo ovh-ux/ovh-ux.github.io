@@ -1,0 +1,60 @@
+{
+    "nbrRepos": "85",
+    "lastRepo": {
+        "name": "ovh-manager-dedicated",
+        "html_url": "https://github.com/ovh-ux/ovh-manager-dedicated",
+        "push": "an hour ago"
+    },
+    "techno": {
+        "JavaScript": "76",
+        "HTML": "5",
+        "CSS": "4",
+        "Shell": "1"
+    },
+    "managers": {
+        "ovh-manager-telecom" : {
+            "repo": {
+                "name": "ovh-manager-telecom",
+                "description": "OVH Control Panel Telecom UI - Official Repository",
+                "html_url": "https://github.com/ovh-ux/ovh-manager-telecom"
+            },
+            "commits": "1620",
+            "contrib": "19",
+            "push": "18 hours ago",
+            "topics": ["control-panel", "ovh", "ovh-ux", "manager", "css", "less", "html", "npm", "babel", "javascript"]
+        },
+        "ovh-manager-cloud" : {
+            "repo": {
+                "name": "ovh-manager-cloud",
+                "description": "OVH Control Panel Cloud UI - Official Repository",
+                "html_url": "https://github.com/ovh-ux/ovh-manager-cloud"
+            },
+            "commits": "1519",
+            "contrib": "19",
+            "push": "3 days ago",
+            "topics": ["ovh", "ovh-ux", "control-panel", "manager", "javascript", "html", "css", "less"]
+        },
+        "ovh-manager-web" : {
+            "repo": {
+                "name": "ovh-manager-web",
+                "description": "OVH Control Panel Web UI",
+                "html_url": "https://github.com/ovh-ux/ovh-manager-web"
+            },
+            "commits": "974",
+            "contrib": "22",
+            "push": "31 minutes ago",
+            "topics": ["ovh", "ovh-ux", "control-panel", "manager", "javascript", "html", "css", "less"]
+        },
+        "ovh-manager-dedicated" : {
+            "repo": {
+                "name": "ovh-manager-dedicated",
+                "description": "OVH Control Panel Dedicated UI",
+                "html_url": "https://github.com/ovh-ux/ovh-manager-dedicated"
+            },
+            "commits": "396",
+            "contrib": "12",
+            "push": "12 minutes ago",
+            "topics": ["ovh", "ovh-ux", "ovh-manager", "control-panel"]
+        }
+    }
+}

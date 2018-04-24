@@ -1,4 +1,4 @@
-import { api } from "../../utils/request";
+import { api, local } from "../../utils/request";
 import lodash from "lodash";
 
 function getLastCommit (repo) {
@@ -54,12 +54,24 @@ export default {
             const nbr_repos = response.data.public_repos;
 
             commit("NBR_REPOS", nbr_repos);
+        }).catch(() => {
+            local.get("/static/data.json").then((response) => {
+                const nbr_repos = response.data.nbrRepos;
+
+                commit("NBR_REPOS", nbr_repos);
+            });
         });
     },
     lastPushed ({ commit }) {
         return api.get("/users/ovh-ux/repos?sort=pushed&direction=desc").then((response) => {
             const last = response.data[0];
             commit("LAST_PUSHED", last);
+        }).catch(() => {
+            local.get("/static/data.json").then((response) => {
+                const last = response.data.lastRepo;
+
+                commit("LAST_PUSHED", last);
+            });
         });
     },
     aboutTechno ({ commit }) {
@@ -85,8 +97,13 @@ export default {
             sort = _.pick(language_obj, sort);
 
             commit("ABOUT_TECHNO", sort);
-        }
-        );
+        }).catch(() => {
+            local.get("/static/data.json").then((response) => {
+                const data = response.data.techno;
+
+                commit("ABOUT_TECHNO", data);
+            });
+        });
     },
     manager ({ commit }, repo) {
         api.get("/repos/ovh-ux/" + repo).then((data) => {
@@ -104,6 +121,12 @@ export default {
                         commit("MANAGER", ret);
                     });
                 });
+            });
+        }).catch(() => {
+            local.get("/static/data.json").then((response) => {
+                const data = response.data.managers[repo];
+
+                commit("MANAGER", data);
             });
         });
     },
