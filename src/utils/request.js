@@ -3,7 +3,6 @@ import localforage from "localforage";
 import { setupCache } from "axios-cache-adapter";
 
 const store = localforage.createInstance({ name: "ovh-ux" });
-const giturl = "http://api.github.com";
 
 export const cache = setupCache({
     maxAge: 60 * 60 * 1000,
@@ -16,7 +15,7 @@ export const cache = setupCache({
 
 export const api = axios.create({
     adapter: cache.adapter,
-    baseURL: giturl,
+    baseURL: `${process.env.API_URL}`,
     method: "get",
     headers: {
         Accept: "application/vnd.github.mercy-preview+json"
