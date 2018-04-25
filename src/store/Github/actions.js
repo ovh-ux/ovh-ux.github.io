@@ -2,7 +2,7 @@ import { api, local } from "../../utils/request";
 import lodash from "lodash";
 
 function getLastCommit (repo) {
-    return api.get("/repos/ovh-ux/" + repo + "/commits")
+    return api.get(`/repos/ovh-ux/${repo}/commits`)
         .catch(() => local.get(`${repo}_last_commit.json`))
         .then((response) => {
             const last = response.data[0].sha;
@@ -29,7 +29,7 @@ function getCommits (repo) {
 }
 
 function getContributors (repo) {
-    return api.get("/repos/ovh-ux/" + repo + "/contributors")
+    return api.get(`/repos/ovh-ux/${repo}/contributors`)
         .catch(() => local.get(`${repo}_contributors.json`))
         .then((response) => {
             const data = response.data;
@@ -44,7 +44,7 @@ function getContributors (repo) {
 }
 
 function getTopics (repo) {
-    return api.get("/repos/ovh-ux/" + repo + "/topics")
+    return api.get(`/repos/ovh-ux/${repo}/topics`)
         .catch(() => local.get(`${repo}_topics.json`))
         .then((response) => {
             const data = response.data.names;
@@ -103,7 +103,7 @@ export default {
             });
     },
     manager ({ commit }, repo) {
-        api.get("/repos/ovh-ux/" + repo)
+        api.get(`/repos/ovh-ux/${repo}`)
             .catch(() => local.get(`${repo}.json`))
             .then((data) => {
                 getCommits(repo).then((commits) => {
