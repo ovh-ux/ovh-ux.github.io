@@ -1,0 +1,43 @@
+# ovh-ux
+
+https://api.github.com/users/ovh-ux
+
+# ovh-ux repos
+
+https://api.github.com/users/ovh-ux/repos?sort=pushed&direction=desc
+https://api.github.com/users/ovh-ux/repos?per_page=500
+
+# managers
+
+https://api.github.com/repos/ovh-ux/ovh-manager-telecom
+https://api.github.com/repos/ovh-ux/ovh-manager-cloud
+https://api.github.com/repos/ovh-ux/ovh-manager-web
+https://api.github.com/repos/ovh-ux/ovh-manager-dedicated
+
+# managers last commit
+
+https://api.github.com/repos/ovh-ux/ovh-manager-telecom/commits
+https://api.github.com/repos/ovh-ux/ovh-manager-cloud/commits
+https://api.github.com/repos/ovh-ux/ovh-manager-web/commits
+https://api.github.com/repos/ovh-ux/ovh-manager-dedicated/commits
+
+# managers commits compare (where ${last} is variable depend of last commit)
+
+https://api.github.com/repos/ovh-ux/ovh-manager-telecom/compare/7ddd35c7ccde0f55dd217852949c5ef83e9c85a9...${last}
+https://api.github.com/repos/ovh-ux/ovh-manager-cloud/44256bffb7ab124e9537c470cbfa42b4fae7432f...${last}
+https://api.github.com/repos/ovh-ux/ovh-manager-web/6a63e7c0199620f8e62d73a378cde770bb51f56f...${last}
+https://api.github.com/repos/ovh-ux/ovh-manager-dedicated/c9c25615fb3e2a8f975e5906268dc259675be799...${last}
+
+# managers contributors
+
+https://api.github.com/repos/ovh-ux/ovh-manager-telecom/contributors
+https://api.github.com/repos/ovh-ux/ovh-manager-cloud/contributors
+https://api.github.com/repos/ovh-ux/ovh-manager-web/contributors
+https://api.github.com/repos/ovh-ux/ovh-manager-dedicated/contributors
+
+# managers tags
+
+https://api.github.com/repos/ovh-ux/ovh-manager-telecom/topics
+https://api.github.com/repos/ovh-ux/ovh-manager-cloud/topics
+https://api.github.com/repos/ovh-ux/ovh-manager-web/topics
+https://api.github.com/repos/ovh-ux/ovh-manager-dedicated/topics
