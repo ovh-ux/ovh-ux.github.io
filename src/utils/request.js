@@ -21,3 +21,8 @@ export const api = axios.create({
         Accept: "application/vnd.github.mercy-preview+json"
     }
 });
+
+export const local = axios.create({
+    baseURL: "/static/api/",
+    method: "get"
+});

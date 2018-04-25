@@ -1,18 +1,22 @@
-import { api } from "../../utils/request";
+import { api, local } from "../../utils/request";
 import lodash from "lodash";
 
 function getLastCommit (repo) {
-    return api.get("/repos/ovh-ux/" + repo + "/commits").then((response) => {
-        const last = response.data[0].sha;
-        return last;
-    });
+    return api.get(`/repos/ovh-ux/${repo}/commits`)
+        .catch(() => local.get(`${repo}_last_commit.json`))
+        .then((response) => {
+            const last = response.data[0].sha;
+            return last;
+        });
 }
 
 function compareCommits (repo, first, last) {
-    return api.get(`/repos/ovh-ux/${repo}/compare/${first}...${last}`).then((response) => {
-        const total = response.data.total_commits;
-        return total;
-    });
+    return api.get(`/repos/ovh-ux/${repo}/compare/${first}...${last}`)
+        .catch(() => local.get(`${repo}_compare.json`))
+        .then((response) => {
+            const total = response.data.total_commits;
+            return total;
+        });
 }
 
 function getCommits (repo) {
@@ -25,87 +29,99 @@ function getCommits (repo) {
 }
 
 function getContributors (repo) {
-    return api.get("/repos/ovh-ux/" + repo + "/contributors").then((response) => {
-        const data = response.data;
-        const contributors = [];
+    return api.get(`/repos/ovh-ux/${repo}/contributors`)
+        .catch(() => local.get(`${repo}_contributors.json`))
+        .then((response) => {
+            const data = response.data;
+            const contributors = [];
 
-        data.forEach((element) => {
-            contributors.push(element);
+            data.forEach((element) => {
+                contributors.push(element);
+            });
+
+            return contributors;
         });
-        return contributors;
-    });
 }
 
 function getTopics (repo) {
-    return api.get("/repos/ovh-ux/" + repo + "/topics").then((response) => {
-        const data = response.data.names;
-        const topics = [];
+    return api.get(`/repos/ovh-ux/${repo}/topics`)
+        .catch(() => local.get(`${repo}_topics.json`))
+        .then((response) => {
+            const data = response.data.names;
+            const topics = [];
 
-        data.forEach((element) => {
-            topics.push(element);
+            data.forEach((element) => {
+                topics.push(element);
+            });
+            return topics;
         });
-        return topics;
-    });
 }
 
 export default {
     nbrRepos ({ commit }) {
-        return api.get("/users/ovh-ux").then((response) => {
-            const nbr_repos = response.data.public_repos;
+        return api.get("/users/ovh-ux")
+            .catch(() => local.get("ovh-ux.json"))
+            .then((response) => {
+                const nbr_repos = response.data.public_repos;
 
-            commit("NBR_REPOS", nbr_repos);
-        });
+                commit("NBR_REPOS", nbr_repos);
+            });
     },
     lastPushed ({ commit }) {
-        return api.get("/users/ovh-ux/repos?sort=pushed&direction=desc").then((response) => {
-            const last = response.data[0];
-            commit("LAST_PUSHED", last);
-        });
+        return api.get("/users/ovh-ux/repos?sort=pushed&direction=desc")
+            .catch(() => local.get("reposDesc.json"))
+            .then((response) => {
+                const last = response.data[0];
+                commit("LAST_PUSHED", last);
+            });
     },
     aboutTechno ({ commit }) {
-        return api.get("/users/ovh-ux/repos?per_page=500").then((response) => {
-            const data = response.data;
-            const language_obj = {};
-            let lang;
-            let sort;
+        return api.get("/users/ovh-ux/repos?per_page=500")
+            .catch(() => local.get("allRepos.json"))
+            .then((response) => {
+                const data = response.data;
+                const language_obj = {};
+                let lang;
+                let sort;
 
-            data.forEach((element) => {
-                lang = element.language;
-                if (language_obj[lang] == null && lang != null) {
-                    language_obj[lang] = 1;
-                } else if (language_obj[lang] != null && lang != null) {
-                    language_obj[lang] += 1;
-                }
+                data.forEach((element) => {
+                    lang = element.language;
+                    if (language_obj[lang] == null && lang != null) {
+                        language_obj[lang] = 1;
+                    } else if (language_obj[lang] != null && lang != null) {
+                        language_obj[lang] += 1;
+                    }
+                });
+
+                sort = _.sortBy(_.keys(language_obj), function (current) {
+                    return -language_obj[current];
+                });
+
+                sort = _.pick(language_obj, sort);
+
+                commit("ABOUT_TECHNO", sort);
             });
-
-            sort = _.sortBy(_.keys(language_obj), function (current) {
-                return -language_obj[current];
-            });
-
-            sort = _.pick(language_obj, sort);
-
-            commit("ABOUT_TECHNO", sort);
-        }
-        );
     },
     manager ({ commit }, repo) {
-        api.get("/repos/ovh-ux/" + repo).then((data) => {
-            getCommits(repo).then((commits) => {
-                getContributors(repo).then((contributors) => {
-                    getTopics(repo).then((topics) => {
-                        const ret = {};
-                        const rep = data.data;
+        api.get(`/repos/ovh-ux/${repo}`)
+            .catch(() => local.get(`${repo}.json`))
+            .then((data) => {
+                getCommits(repo).then((commits) => {
+                    getContributors(repo).then((contributors) => {
+                        getTopics(repo).then((topics) => {
+                            const ret = {};
+                            const rep = data.data;
 
-                        ret.repo = rep;
-                        ret.commits = commits;
-                        ret.contributors = contributors;
-                        ret.topics = topics;
+                            ret.repo = rep;
+                            ret.commits = commits;
+                            ret.contributors = contributors;
+                            ret.topics = topics;
 
-                        commit("MANAGER", ret);
+                            commit("MANAGER", ret);
+                        });
                     });
                 });
             });
-        });
     },
     otherProjects ({ commit }) {
         return api.get("/users/ovh-ux/repos?sort=pushed&direction=desc").then((response) => {
