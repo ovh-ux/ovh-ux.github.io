@@ -1,28 +1,17 @@
 import axios from "axios";
-import localforage from "localforage";
-import { setupCache } from "axios-cache-adapter";
 
-const store = localforage.createInstance({ name: "ovh-ux" });
-
-export const cache = setupCache({
-    maxAge: 60 * 60 * 1000,
-    limit: 30,
-    store,
-    exclude: {
-        query: false
-    }
-});
+const gitURL = "https://api.github.com";
+const proxyURL = "http://github-proxyfier.ux.lb.gra-1.containers.ovh.net/users/ovh-ux";
 
 export const api = axios.create({
-    adapter: cache.adapter,
-    baseURL: `${process.env.API_URL}`,
+    baseURL: gitURL,
     method: "get",
     headers: {
         Accept: "application/vnd.github.mercy-preview+json"
     }
 });
 
-export const local = axios.create({
-    baseURL: "/static/api/",
+export const proxy = axios.create({
+    baseURL: proxyURL,
     method: "get"
 });
