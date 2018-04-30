@@ -12,7 +12,7 @@ export const api = axios.create({
 });
 
 export const proxy = axios.create({
-    baseURL: serverApi.concat("/users/ovh-ux"),
+    baseURL: serverApi,
     method: "get",
     headers: {
         Accept: "application/vnd.github.mercy-preview+json"
