@@ -1,0 +1,69 @@
+button {
+  font-family: inherit;
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  font-weight: $fwMedium;
+  border-radius: 3px;
+  color: $textColorReverse;
+  cursor: pointer;
+
+  &:focus {
+    outline: dotted 0.063rem fade-out($textColor, 0.85);
+  }
+
+  &--primary {
+    padding: $spaceS2 $spaceBase;
+    border: solid 0.063rem $primaryColor;
+    background-color: $primaryColor;
+    text-decoration: none;
+    transition: background-color .16s cubic-bezier(.69,.19,.71,.87),
+      border-color .16s cubic-bezier(.69,.19,.71,.87);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: mix($primaryColor, $secondaryColor, 60%);
+      border-color: fade-out($secondaryColor, .6);
+    }
+  }
+
+  &--default {
+    padding: $spaceS2 $spaceBase;
+    border: solid 0.063rem $primaryColor;
+    background-color: transparent;
+    text-decoration: none;
+    transition: border-color .16s cubic-bezier(.69,.19,.71,.87),
+    background-color .16s cubic-bezier(.69,.19,.71,.87);
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $secondaryColor;
+      background-color: fade-out($primaryColor, 0.85);
+    }
+  }
+}
+
+.link {
+  @extend %text--link;
+
+  border-bottom: solid .063rem $textColor;
+  position: relative;
+  color: $textColor;
+  text-decoration: none;
+  transition: all .1s ease-out;
+
+  &.link--accented {
+    color: $primaryColor;
+    border-bottom: solid .063rem $primaryColor;
+  }
+
+  &:hover,
+  &.link--accented:hover {
+    border-width: .188rem;
+  }
+}

@@ -1,0 +1,35 @@
+@import url(../node_modules/sanitize.css);
+
+@import "src/styles/mixins/_font-face";
+
+@include font-face("SourceSansPro", "assets/fonts/sourcesanspro-bold-webfont", 700, normal);
+@include font-face("SourceSansPro", "assets/fonts/sourcesanspro-regular-webfont", normal, normal);
+@include font-face("SourceSansPro", "assets/fonts/sourcesanspro-semibold-webfont", 600, normal);
+
+@import "src/styles/agile";
+@import "src/styles/buttons";
+@import "src/styles/icons";
+
+body {
+  @extend %text;
+  @extend %text--base;
+
+  padding: 0;
+  color: $textColor;
+  background-color: $backgroundColor;
+}
+
+main {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.main-gradient {
+  background: linear-gradient(330deg, fade-out($secondaryColor, .75), transparent);
+}
+
+@media screen and (min-width: $bpS) and (orientation: landscape) {
+  .main__section {
+    min-height: 100vh;
+  }
+}

@@ -1,0 +1,41 @@
+.contact-item {
+  padding: $spaceL1 0;
+  border-bottom: solid .063rem $borderColor;
+  text-align: center;
+
+  &:first-child {
+    padding-top: $spaceL2;
+  }
+
+  &:last-child {
+    padding-bottom: $spaceXL2;
+    border-bottom: none;
+  }
+
+  &__title {
+    @extend %title;
+    @extend %title--main;
+
+    margin: $spaceL2 0 $spaceBase 0;
+  }
+
+  @media screen and (min-width: $bpS) and (orientation: landscape){
+    flex: 1 1 100%;
+    padding: 0 $spaceBase;
+    border-right: solid .063rem $borderColor;
+    border-bottom: none;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-right: none;
+    }
+  }
+
+  @media screen and (min-width: $bpL) and (orientation: landscape){
+    padding: 0 $spaceL2;
+  }
+}

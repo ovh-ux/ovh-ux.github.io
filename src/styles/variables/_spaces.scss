@@ -1,0 +1,13 @@
+$spaceRatio: 1.414;
+$spaceBase: 1rem;
+
+$spaceS1: $spaceBase / $spaceRatio;
+$spaceS2: $spaceS1 / $spaceRatio;
+$spaceS3: $spaceS2 / $spaceRatio;
+
+$spaceL1: $spaceBase * $spaceRatio;
+$spaceL2: $spaceL1 * $spaceRatio;
+$spaceL3: $spaceL2 * $spaceRatio;
+
+$spaceXL1: $spaceL3 * $spaceRatio;
+$spaceXL2: $spaceXL1 * $spaceRatio;

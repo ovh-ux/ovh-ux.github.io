@@ -1,0 +1,21 @@
+.about-recent-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: $spaceL2;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__description {
+    padding-left: $spaceBase;
+  }
+
+
+
+  @media screen and (min-width: $bpS) and (orientation: landscape) {
+    flex-basis: 50%;
+    margin-bottom: 0;
+  }
+}
