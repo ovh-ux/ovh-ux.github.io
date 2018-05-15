@@ -1,9 +1,9 @@
-import { api, proxy } from "../../utils/request";
+import { api, proxy, local } from "../../utils/request";
 import lodash from "lodash";
 
 function getLastCommit (repo) {
     return api.get(`/repos/ovh-ux/${repo}/commits`)
-        .catch(() => proxy.get(`/repos/ovh-ux/${repo}/commits`))
+        .catch(() => local.get(`${repo}_last_commits.json`))
         .then((response) => {
             const last = response.data[0].sha;
             return last;
@@ -12,7 +12,7 @@ function getLastCommit (repo) {
 
 function compareCommits (repo, first, last) {
     return api.get(`/repos/ovh-ux/${repo}/compare/${first}...${last}`)
-        .catch(() => proxy.get(`/repos/ovh-ux/${repo}/compare/${first}...${last}`))
+        .catch(() => local.get(`${repo}_compare.json`))
         .then((response) => {
             const total = response.data.total_commits;
             return total;
@@ -21,7 +21,7 @@ function compareCommits (repo, first, last) {
 
 function getCommits (repo) {
     return getLastCommit(repo).then((lastcommit) => {
-        const first = { "ovh-manager-web": "6a63e7c0199620f8e62d73a378cde770bb51f56f", "ovh-manager-cloud": "44256bffb7ab124e9537c470cbfa42b4fae7432f", "ovh-manager-telecom": "7ddd35c7ccde0f55dd217852949c5ef83e9c85a9", "ovh-manager-dedicated": "c9c25615fb3e2a8f975e5906268dc259675be799" };
+        const first = {"ovh-manager-web": "6a63e7c0199620f8e62d73a378cde770bb51f56f", "ovh-manager-cloud": "44256bffb7ab124e9537c470cbfa42b4fae7432f", "ovh-manager-telecom": "7ddd35c7ccde0f55dd217852949c5ef83e9c85a9", "ovh-manager-dedicated": "c9c25615fb3e2a8f975e5906268dc259675be799"};
         return compareCommits(repo, first[repo], lastcommit).then((response) => {
             return response + 1;
         });
@@ -30,7 +30,7 @@ function getCommits (repo) {
 
 function getContributors (repo) {
     return api.get(`/repos/ovh-ux/${repo}/contributors`)
-        .catch(() => proxy.get(`/repos/ovh-ux/${repo}/contributors`))
+        .catch(() => local.get(`${repo}_contributors.json`))
         .then((response) => {
             const data = response.data;
             const contributors = [];
@@ -45,7 +45,7 @@ function getContributors (repo) {
 
 function getTopics (repo) {
     return api.get(`/repos/ovh-ux/${repo}/topics`)
-        .catch(() => proxy.get(`/repos/ovh-ux/${repo}/topics`))
+        .catch(() => local.get(`${repo}_topics.json`))
         .then((response) => {
             const data = response.data.names;
             const topics = [];
@@ -60,7 +60,7 @@ function getTopics (repo) {
 export default {
     nbrRepos ({ commit }) {
         return api.get("/users/ovh-ux")
-            .catch(() => proxy.get("/users/ovh-ux"))
+            .catch(() => local.get("ovh-ux.json"))
             .then((response) => {
                 const nbr_repos = response.data.public_repos;
 
@@ -69,7 +69,7 @@ export default {
     },
     lastPushed ({ commit }) {
         return api.get("/users/ovh-ux/repos?sort=pushed&direction=desc")
-            .catch(() => proxy.get("/users/ovh-ux/repos?sort=pushed&direction=desc"))
+            .catch(() => local.get("reposDesc.json"))
             .then((response) => {
                 const last = response.data[0];
                 commit("LAST_PUSHED", last);
@@ -77,7 +77,7 @@ export default {
     },
     aboutTechno ({ commit }) {
         return api.get("/users/ovh-ux/repos?per_page=500")
-            .catch(() => proxy.get("/users/ovh-ux/repos?per_page=500"))
+            .catch(() => local.get("reposAll.json"))
             .then((response) => {
                 const data = response.data;
                 const language_obj = {};
@@ -104,7 +104,7 @@ export default {
     },
     manager ({ commit }, repo) {
         api.get(`/repos/ovh-ux/${repo}`)
-            .catch(() => proxy.get(`/repos/ovh-ux/${repo}`))
+            .catch(() => local.get(`${repo}.json`))
             .then((data) => {
                 getCommits(repo).then((commits) => {
                     getContributors(repo).then((contributors) => {
@@ -125,7 +125,6 @@ export default {
     },
     otherProjects ({ commit }) {
         return api.get("/users/ovh-ux/repos?sort=pushed&direction=desc")
-            .catch(() => proxy.get("/users/ovh-ux/repos?sort=pushed&direction=desc"))
             .then((response) => {
                 const data = response.data;
                 commit("OTHER_PROJECTS", data);
